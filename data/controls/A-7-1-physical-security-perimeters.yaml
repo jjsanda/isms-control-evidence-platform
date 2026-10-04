@@ -1,0 +1,33 @@
+# Control A.7.1 — Physical security perimeters.
+id: "A.7.1"
+title: "Physical security perimeters"
+theme: physical
+category: "Physical security"
+objective: >-
+  Define and use security perimeters to protect areas that contain information and other associated
+  assets.
+owner:
+  name: "Karl Mayer"
+  role: "Facilities & Physical Security Lead"
+  email: "karl.mayer@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Offices and technical areas have defined secure perimeters, and street lockers are hardened
+  enclosures acting as their own perimeter.
+policy_refs: []
+evidence_refs: ["EV-013"]
+risk_refs: ["R-001"]
+nis2_areas: []
+implementation_notes: >-
+  The Vienna office and operations centre use access-controlled perimeters with badge entry,
+  reception and alarmed doors. Street-sited lockers are ruggedised steel enclosures with
+  tamper-resistant fixings and locked service compartments that form the physical perimeter around
+  the edge device; a periodic enclosure security review (EV-013) checks integrity across the estate
+  under Karl Mayer's physical-security standard.
+last_review: 2026-02-05
+next_review: 2027-02-05
+audit_status: accepted
+tags: ["physical", "perimeter"]

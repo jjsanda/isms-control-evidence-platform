@@ -1,0 +1,27 @@
+# Risk — data loss / failure to restore backend after an outage.
+id: "R-003"
+title: "Data loss / failure to restore backend after outage"
+description: >-
+  Loss of, or inability to restore, the backend databases after an outage, data corruption,
+  ransomware or a region failure, causing loss of parcel and customer data and prolonged
+  unavailability of the service.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+asset: "Backend databases"
+threat: "Infrastructure failure, data corruption or ransomware affecting the backend"
+vulnerability: "Backups that are not sufficiently tested, protected or geographically redundant"
+inherent_likelihood: 3
+inherent_impact: 5
+treatment: mitigate
+mitigation: >-
+  Automated, encrypted, cross-region backups meeting a one-hour RPO with restores that are
+  regularly tested rather than assumed (A.8.13); ICT continuity planning and disaster-recovery
+  testing to meet the four-hour RTO (A.5.30).
+control_refs: ["A.8.13", "A.5.30"]
+residual_likelihood: 2
+residual_impact: 3
+target_date: 2026-09-01
+review_date: 2027-01-01
+acceptance: pending

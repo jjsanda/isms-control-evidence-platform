@@ -1,0 +1,22 @@
+stateDiagram-v2
+    direction LR
+    [*] --> draft
+    draft --> reviewed : submit for review
+    reviewed --> accepted : approve
+    reviewed --> draft : send back
+    accepted --> reviewed : periodic re-review
+    accepted --> expired : review date passes
+    expired --> draft : re-open
+    expired --> reviewed : re-review
+
+    note right of accepted
+        Segregation of duties:
+        nothing goes straight
+        from draft to accepted.
+    end note
+    note right of expired
+        Time-driven: an accepted
+        control auto-reads as
+        expired once next_review
+        is in the past.
+    end note

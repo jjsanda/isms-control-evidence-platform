@@ -1,0 +1,19 @@
+# Evidence — network segmentation and TLS configuration export.
+id: "EV-018"
+title: "Network segmentation & TLS configuration export"
+type: config_export
+control_refs: ["A.8.20", "A.8.24"]
+collected_on: 2026-03-08
+collected_by:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+artifact_path: "evidence/artifacts/network-tls-config.md"
+valid_from: 2026-03-08
+valid_until: 2027-03-08
+source: "manual"
+audit_status: accepted
+notes: >-
+  Export of the network segmentation rules and TLS/crypto configuration for the locker-to-backend
+  and customer-facing paths, evidencing default-deny ingress, segmentation and TLS 1.2+ with
+  approved cipher suites.

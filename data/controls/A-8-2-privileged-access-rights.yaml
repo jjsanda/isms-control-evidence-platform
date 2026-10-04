@@ -1,0 +1,32 @@
+# Control A.8.2 — Privileged access rights.
+id: "A.8.2"
+title: "Privileged access rights"
+theme: technological
+category: "Access control"
+objective: >-
+  Restrict and manage the allocation and use of privileged access rights.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+status: operating
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Administrative access to the cloud backend and the locker fleet-management plane is tightly
+  restricted, monitored and reviewed.
+policy_refs: ["POL-ACC"]
+evidence_refs: ["EV-005"]
+risk_refs: ["R-004", "R-010"]
+nis2_areas: [hr_access_asset]
+implementation_notes: >-
+  Privileged roles — cloud admin, database, fleet-management and break-glass — are minimised,
+  individually assigned and require MFA; elevation is just-in-time where supported and privileged
+  sessions are logged to the central store, with sealed break-glass accounts that alarm on use.
+  Privileged entitlements are reconfirmed in the quarterly access review (EV-005) and are the focus
+  of the accepted insider risk R-010.
+last_review: 2026-02-20
+next_review: 2027-02-20
+audit_status: accepted
+tags: ["privileged-access", "pam"]

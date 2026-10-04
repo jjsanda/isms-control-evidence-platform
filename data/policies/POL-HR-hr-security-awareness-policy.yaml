@@ -1,0 +1,17 @@
+# HR security and awareness policy.
+id: "POL-HR"
+title: "HR Security & Awareness Policy"
+version: "1.4"
+owner:
+  name: "Petra Klein"
+  role: "HR Manager"
+  email: "petra.klein@paketport.example"
+approved_on: 2025-09-15
+next_review: 2026-09-15
+summary: >-
+  Covers information security across the employment lifecycle at PaketPort, from screening and
+  terms of employment through role changes and termination. Mandates recurring security-awareness
+  training and a graded quiz for all staff and field technicians, with completion tracked and
+  additional locker-tampering guidance for field roles.
+control_refs: ["A.6.3"]
+document_path: "docs/policies/hr-security-awareness-policy.md"

@@ -1,0 +1,31 @@
+# Control A.5.35 — Independent review of information security.
+id: "A.5.35"
+title: "Independent review of information security"
+theme: organizational
+category: "Assurance"
+objective: >-
+  Have the organisation's approach to managing information security independently reviewed at
+  planned intervals and when significant changes occur.
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: best_practice
+soa_justification: >-
+  Periodic independent audits provide assurance that the ISMS is effective ahead of certification.
+policy_refs: ["POL-ISMS"]
+evidence_refs: ["EV-017"]
+risk_refs: []
+nis2_areas: [effectiveness]
+implementation_notes: >-
+  An internal ISMS audit programme independent of line operations reviews the controls on a rolling
+  annual plan; the latest internal audit report (EV-017) fed findings into the CAPA backlog and the
+  management review, covering both design and operating effectiveness. External certification
+  assessment is planned as the next independent review.
+last_review: 2026-02-01
+next_review: 2027-02-01
+audit_status: accepted
+tags: ["audit", "assurance"]

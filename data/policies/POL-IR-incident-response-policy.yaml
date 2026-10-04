@@ -1,0 +1,17 @@
+# Incident response policy.
+id: "POL-IR"
+title: "Information Security Incident Response Policy"
+version: "1.2"
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+approved_on: 2025-11-01
+next_review: 2026-11-01
+summary: >-
+  Establishes how PaketPort prepares for, detects, triages, responds to and learns from
+  information security incidents affecting the lockers and backend. Sets the severity model,
+  on-call roles and escalation, event-reporting channels, and the NIS2 Art. 23 reporting workflow
+  with its 24-hour, 72-hour and one-month deadlines.
+control_refs: ["A.5.24", "A.5.25", "A.6.8"]
+document_path: "docs/policies/incident-response-policy.md"

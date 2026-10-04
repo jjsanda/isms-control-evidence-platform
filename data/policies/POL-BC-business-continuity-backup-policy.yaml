@@ -1,0 +1,17 @@
+# Business continuity and backup policy.
+id: "POL-BC"
+title: "Business Continuity & Backup Policy"
+version: "1.0"
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+approved_on: 2026-01-20
+next_review: 2027-01-20
+summary: >-
+  Sets PaketPort's requirements for ICT continuity and backup so that the backend and locker
+  service recover within agreed targets. Defines the four-hour RTO and one-hour RPO for the
+  backend, encrypted cross-region backups with tested restores, and the ICT continuity and
+  disaster-recovery testing regime.
+control_refs: ["A.5.30", "A.8.13"]
+document_path: "docs/policies/business-continuity-backup-policy.md"

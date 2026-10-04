@@ -1,0 +1,33 @@
+# Control A.5.30 — ICT readiness for business continuity.
+id: "A.5.30"
+title: "ICT readiness for business continuity"
+theme: organizational
+category: "Continuity"
+objective: >-
+  Plan, implement and test ICT continuity so that information and systems remain available at the
+  required level during and after a disruption.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+status: in_progress
+maturity: 2
+applicable: true
+inclusion_reason: business
+soa_justification: >-
+  Customers depend on 24/7 lockers, so ICT continuity for the backend and devices is planned and
+  tested against RTO and RPO targets.
+policy_refs: ["POL-BC"]
+evidence_refs: ["EV-004"]
+risk_refs: ["R-003"]
+nis2_areas: [business_continuity]
+implementation_notes: >-
+  Continuity requirements are defined in POL-BC with a target RTO of four hours and RPO of one hour
+  for the backend. Multi-region cloud failover and tested restores (EV-004) underpin recovery, and
+  the formal ICT continuity plan and first full disaster-recovery test are being completed under
+  CAPA-005. Lockers buffer transactions locally and reconcile on reconnection to keep parcel
+  handover working during disruption.
+last_review: 2026-04-01
+next_review: 2026-10-01
+audit_status: reviewed
+tags: ["continuity", "disaster-recovery"]

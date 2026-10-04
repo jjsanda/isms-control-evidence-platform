@@ -1,0 +1,80 @@
+# Security-awareness quiz gating completion of TRN-001.
+id: "QZ-001"
+title: "Security Awareness Quiz"
+training_ref: "TRN-001"
+pass_threshold: 0.8
+questions:
+  - id: "Q1"
+    prompt: >-
+      An email that looks like it is from a carrier partner asks you to log in via a link to
+      "confirm a parcel batch". The link domain is slightly misspelled. What should you do?
+    options:
+      - "Log in quickly so the parcels are not delayed"
+      - "Report it through the security channel and do not click the link"
+      - "Forward it to a colleague to check"
+      - "Reply to the email asking whether it is genuine"
+    correct_index: 1
+    explanation: >-
+      Do not click. Misspelled domains and urgency are classic phishing signs; report suspected
+      phishing through the security channel.
+  - id: "Q2"
+    prompt: "Why does PaketPort require multi-factor authentication (MFA) for admin and backend access?"
+    options:
+      - "It replaces the need for a password"
+      - "It adds an independent second factor, so a stolen password alone is not enough"
+      - "It makes logging in faster"
+      - "It is only needed when you are off the office network"
+    correct_index: 1
+    explanation: >-
+      MFA adds a second, independent factor, so a phished or reused password on its own does not
+      grant access.
+  - id: "Q3"
+    prompt: >-
+      PaketPort is a NIS2 essential entity. After becoming aware of a significant incident, within
+      how long must an early warning be submitted to the authorities?
+    options:
+      - "24 hours"
+      - "72 hours"
+      - "One week"
+      - "One month"
+    correct_index: 0
+    explanation: >-
+      NIS2 Art. 23 requires an early warning within 24 hours of becoming aware, a fuller
+      notification within 72 hours, and a final report within one month.
+  - id: "Q4"
+    prompt: >-
+      While servicing a street locker you notice the service compartment has been forced and an
+      unfamiliar device is attached inside. What is the right action?
+    options:
+      - "Remove the device and carry on with the service"
+      - "Ignore it as long as the locker still works"
+      - "Report it immediately as a security incident and do not disturb the evidence"
+      - "Wait until your next scheduled visit to mention it"
+    correct_index: 2
+    explanation: >-
+      Suspected physical tampering is a security incident: report it immediately and preserve the
+      evidence for investigation and possible NIS2 reporting.
+  - id: "Q5"
+    prompt: >-
+      A customer emails asking you to send them the full delivery history and address details of
+      a different customer. What should you do?
+    options:
+      - "Send it to be helpful"
+      - "Only share it after verifying the requester through the proper process"
+      - "Post the request in the team chat to ask what to do"
+      - "Share just the address, not the history"
+    correct_index: 1
+    explanation: >-
+      Personal data may only be shared with the data subject or an authorised party after proper
+      verification; handle PII strictly on a need-to-know basis.
+  - id: "Q6"
+    prompt: "Which password practice is acceptable under PaketPort policy?"
+    options:
+      - "Reusing your favourite password across work and personal accounts"
+      - "Using a unique, strong passphrase stored in the approved password manager"
+      - "Sharing an admin password with a teammate to save time"
+      - "Writing the backend password on a sticky note by your screen"
+    correct_index: 1
+    explanation: >-
+      Use unique, strong credentials kept in the approved password manager; never reuse or share
+      passwords.

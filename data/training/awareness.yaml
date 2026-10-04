@@ -1,0 +1,54 @@
+# Security-awareness training module for all PaketPort staff.
+id: "TRN-001"
+title: "Security Awareness for PaketPort Staff"
+audience: "All PaketPort staff"
+version: "1.1"
+learning_objectives:
+  - "Recognise phishing and social-engineering attempts and report them promptly."
+  - "Use strong, unique passphrases and multi-factor authentication correctly."
+  - "Keep workstations and mobile devices secure, locked and up to date."
+  - "Protect street lockers from tampering and recognise physical-security risks."
+  - "Handle customers' personal data on a need-to-know basis and in line with the GDPR."
+  - "Know how and when to report a security incident, including the NIS2 24h/72h timeline."
+nis2_areas: [cyber_hygiene_training, incident_handling]
+body_markdown: |
+  # Security Awareness for PaketPort Staff
+
+  We run street-sited parcel lockers and a cloud backend that handle our customers'
+  personal data. That makes every one of us a target — and a line of defence. This
+  short guide covers what you need to do every day.
+
+  ## Phishing and reporting
+  Most attacks start with a convincing email, SMS or chat message. Be suspicious of
+  urgency, unexpected links or attachments, and requests to log in, pay, or change bank
+  details — even if the sender looks like a carrier partner or a colleague. Check the
+  real sender and link domain. **Do not click.** Report it through the security channel
+  (`security@paketport.example`, the `/report` chat command, or the field hotline). It
+  is always better to report a false alarm than to stay silent.
+
+  ## Strong passwords and MFA
+  Use a unique, strong passphrase for every account and store it in the approved
+  password manager. Never reuse work passwords elsewhere and never share them. Multi-factor
+  authentication (MFA) is required for admin, backend and fleet access: it means a stolen
+  password alone is not enough. Approve an MFA prompt only when you started the login.
+
+  ## Devices and workstations
+  Lock your screen when you step away, keep your laptop and phone patched, and install
+  software only from approved sources. Do not plug unknown USB devices into work machines
+  or into a locker's service port. Report a lost or stolen device immediately.
+
+  ## Physical and locker security
+  Watch for piggybacking — do not hold secure doors open for people you cannot vouch for.
+  In the field, treat any sign of forced entry, an unfamiliar device inside a locker, or a
+  broken tamper seal as a **security incident**: do not disturb it and report it at once.
+
+  ## Handling personal data
+  Access customer names, addresses and parcel history only when your job needs it. Never
+  share personal data without verifying the requester through the proper process, and keep
+  it inside PaketPort systems — not personal email, chat or drives.
+
+  ## Reporting an incident
+  If you suspect *anything* — a phishing click, a tampered locker, a data slip — report it
+  straight away. PaketPort is a NIS2 essential entity: a significant incident must reach the
+  authorities as an **early warning within 24 hours** and a **notification within 72 hours**,
+  so the clock starts the moment we become aware. Fast reporting keeps us compliant and safe.

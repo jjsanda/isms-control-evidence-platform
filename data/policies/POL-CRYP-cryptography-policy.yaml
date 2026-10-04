@@ -1,0 +1,17 @@
+# Cryptography policy.
+id: "POL-CRYP"
+title: "Cryptography Policy"
+version: "1.0"
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+approved_on: 2026-02-01
+next_review: 2027-02-01
+summary: >-
+  Sets the rules for the use of cryptography at PaketPort to protect information in transit and at
+  rest. Mandates TLS 1.2+ (1.3 preferred) for data in transit, AES-256 at rest for databases and
+  backups, signed firmware and OTA images for the locker fleet, and centralised key management
+  with rotation and least-privilege access.
+control_refs: ["A.8.24"]
+document_path: "docs/policies/cryptography-policy.md"

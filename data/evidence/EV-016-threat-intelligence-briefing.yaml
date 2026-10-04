@@ -1,0 +1,18 @@
+# Evidence — threat intelligence briefing (short validity by design).
+id: "EV-016"
+title: "Threat intelligence briefing"
+type: attestation
+control_refs: ["A.5.7"]
+collected_on: 2026-06-20
+collected_by:
+  name: "Tomas Horak"
+  role: "Security Engineer"
+  email: "tomas.horak@paketport.example"
+artifact_path: "evidence/artifacts/threat-intel-brief.md"
+valid_from: 2026-06-20
+valid_until: 2026-07-25
+source: "manual"
+audit_status: accepted
+notes: >-
+  Monthly threat-intelligence briefing summarising relevant advisories and indicators for the
+  locker edge and backend. Its validity window is deliberately short and is refreshed each month.

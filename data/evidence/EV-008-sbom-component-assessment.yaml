@@ -1,0 +1,19 @@
+# Evidence — SBOM and third-party component assessment (work in progress).
+id: "EV-008"
+title: "SBOM & third-party component assessment"
+type: scan_report
+control_refs: ["A.5.21"]
+collected_on: 2026-04-01
+collected_by:
+  name: "Jan Fischer"
+  role: "Head of Procurement"
+  email: "jan.fischer@paketport.example"
+artifact_path: "evidence/artifacts/sbom-assessment.md"
+valid_from: 2026-04-01
+valid_until: 2026-10-01
+source: "manual"
+audit_status: draft
+notes: >-
+  Draft assessment of software bills of materials and third-party components for the edge stack,
+  identifying provenance and known-vulnerability exposure. The process is being established under
+  CAPA-004 and is not yet automated.

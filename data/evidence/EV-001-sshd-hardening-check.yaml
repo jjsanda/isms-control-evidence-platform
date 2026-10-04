@@ -1,0 +1,19 @@
+# Evidence — sshd hardening check across the locker fleet.
+id: "EV-001"
+title: "sshd hardening check (locker fleet)"
+type: config_export
+control_refs: ["A.8.9"]
+collected_on: 2026-06-01
+collected_by:
+  name: "Sara Berger"
+  role: "IT Operations Lead"
+  email: "sara.berger@paketport.example"
+artifact_path: "evidence/artifacts/ssh-hardening-report.md"
+valid_from: 2026-06-01
+valid_until: 2026-12-01
+source: "collector:ssh_hardening"
+audit_status: accepted
+notes: >-
+  Automated export of the effective sshd configuration across the locker fleet, checking key-only
+  authentication, disabled root login and approved ciphers/MACs. Two high-severity deviations are
+  being remediated under CAPA-003.

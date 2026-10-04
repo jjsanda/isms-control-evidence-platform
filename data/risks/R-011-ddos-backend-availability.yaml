@@ -1,0 +1,27 @@
+# Risk — DDoS against the locker backend degrades availability.
+id: "R-011"
+title: "DDoS against the locker backend degrades availability"
+description: >-
+  A distributed denial-of-service attack against the customer-facing API degrades or removes
+  availability of the app and locker interactions, preventing customers and carriers from
+  depositing or collecting parcels.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+asset: "Customer-facing API"
+threat: "Volumetric or application-layer DDoS against internet-facing endpoints"
+vulnerability: "Public exposure of the API and finite backend capacity"
+inherent_likelihood: 3
+inherent_impact: 4
+treatment: mitigate
+mitigation: >-
+  Upstream DDoS protection and a WAF with rate limiting and autoscaling in front of the API
+  (A.8.20), and continuity measures so lockers buffer transactions locally and degrade gracefully
+  during backend stress (A.5.30).
+control_refs: ["A.8.20", "A.5.30"]
+residual_likelihood: 2
+residual_impact: 3
+target_date: 2026-10-01
+review_date: 2027-03-08
+acceptance: pending

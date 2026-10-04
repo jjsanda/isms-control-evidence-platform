@@ -1,0 +1,33 @@
+# Control A.5.15 — Access control.
+id: "A.5.15"
+title: "Access control"
+theme: organizational
+category: "Access control"
+objective: >-
+  Establish and enforce rules that control physical and logical access to information and
+  associated assets based on business and security requirements.
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+status: operating
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Access to the backend, the locker management plane and personal data is restricted on a
+  need-to-know, least-privilege basis.
+policy_refs: ["POL-ACC"]
+evidence_refs: ["EV-005"]
+risk_refs: ["R-004"]
+nis2_areas: [hr_access_asset]
+implementation_notes: >-
+  Access is governed by POL-ACC on least-privilege and need-to-know principles. Backend and
+  locker-management access is brokered through the central identity provider with role-based
+  groups; joiner-mover-leaver changes are triggered from HR events and access is reviewed quarterly
+  (EV-005). Standing access to production is minimised in favour of role assumption and
+  just-in-time elevation.
+last_review: 2026-02-20
+next_review: 2027-02-20
+audit_status: accepted
+tags: ["access-control", "iam"]

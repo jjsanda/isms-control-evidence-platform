@@ -1,0 +1,10 @@
+{
+  // Markdown lint rules for docs and the README. Line length is handled by prose reflow,
+  // and we deliberately embed HTML (centered images, tables) and long tables.
+  "default": true,
+  "MD013": false, // line length
+  "MD033": false, // inline HTML (centered <img>, <p align>, tables)
+  "MD041": false, // first line need not be a top-level heading (badges/blockquote lead)
+  "MD024": { "siblings_only": true }, // duplicate headings allowed across sections
+  "MD029": false // ordered-list numbering style
+}

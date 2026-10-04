@@ -1,0 +1,29 @@
+flowchart LR
+    subgraph SOT["Source of truth (compliance-as-code)"]
+        YAML["<b>data/</b> YAML register<br/>controls, risks, evidence,<br/>policies, NIS2, training"]
+        Samples["<b>data/samples/</b><br/>sshd_config, auditd.rules,<br/>Trivy report, backups, access"]
+    end
+
+    Validate["<b>Pydantic v2</b><br/>schema + cross-reference<br/>integrity check"]
+    Repo["<b>In-memory repository</b><br/>indexed &amp; validated"]
+    Collectors["<b>Evidence collectors</b><br/>(icep seed)"]
+    Artifacts["<b>evidence/</b><br/>artifacts + SHA-256 manifest"]
+
+    Web["<b>Web dashboard</b><br/>FastAPI + inline SVG"]
+    CLI["<b>CLI</b><br/>validate · seed · metrics"]
+    Pack["<b>Audit pack</b><br/>Markdown bundle + PDF"]
+
+    YAML --> Validate --> Repo
+    Samples --> Collectors --> Artifacts
+    Artifacts -.hashes.-> Repo
+    Repo --> Web
+    Repo --> CLI
+    Repo --> Pack
+    Artifacts --> Pack
+
+    classDef store fill:#E0E7FF,stroke:#4F46E5,color:#1E1B4B,rx:8,ry:8;
+    classDef proc fill:#EEF2FF,stroke:#4F46E5,color:#1E1B4B,rx:8,ry:8;
+    classDef out fill:#DCFCE7,stroke:#059669,color:#065F46,rx:8,ry:8;
+    class YAML,Samples,Artifacts store;
+    class Validate,Repo,Collectors proc;
+    class Web,CLI,Pack out;

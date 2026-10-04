@@ -1,0 +1,118 @@
+{
+  "actions": {
+    "open": 5,
+    "overdue": 0,
+    "total": 6
+  },
+  "controls": {
+    "applicable": 93,
+    "audit": {
+      "accepted": 18,
+      "draft": 3,
+      "expired": 1,
+      "reviewed": 3
+    },
+    "catalog_total": 93,
+    "documentation_pct": 26.9,
+    "documented": 25,
+    "due_soon": [
+      "A.8.5",
+      "A.8.28"
+    ],
+    "implementation_pct": 76.0,
+    "implemented": 19,
+    "overdue": [
+      "A.5.21",
+      "A.5.19",
+      "A.8.15"
+    ],
+    "reviews": {
+      "current": 20,
+      "due_soon": 2,
+      "overdue": 3
+    },
+    "status": {
+      "implemented": 11,
+      "in_progress": 6,
+      "not_applicable": 0,
+      "operating": 8,
+      "planned": 0
+    }
+  },
+  "evidence": {
+    "expired": 1,
+    "expiring": 1,
+    "total": 18
+  },
+  "generated_on": "2026-07-07",
+  "nis2": {
+    "area_readiness": {
+      "acq_dev_maintenance": 66.7,
+      "business_continuity": 50.0,
+      "cryptography": 100.0,
+      "cyber_hygiene_training": 100.0,
+      "effectiveness": 100.0,
+      "hr_access_asset": 100.0,
+      "incident_handling": 75.0,
+      "management_accountability": 100.0,
+      "mfa_comms": 50.0,
+      "risk_analysis": 100.0,
+      "supply_chain": 66.7
+    },
+    "overall_pct": 82.6
+  },
+  "risks": {
+    "accepted": 2,
+    "high_or_critical_open": 0,
+    "inherent_bands": {
+      "critical": 7,
+      "high": 4,
+      "low": 0,
+      "medium": 2
+    },
+    "residual_bands": {
+      "critical": 0,
+      "high": 0,
+      "low": 1,
+      "medium": 12
+    },
+    "top_residual": [
+      {
+        "band": "medium",
+        "id": "R-005",
+        "residual_score": 9,
+        "title": "Credential theft via phishing"
+      },
+      {
+        "band": "medium",
+        "id": "R-001",
+        "residual_score": 8,
+        "title": "Firmware tampering on street-sited lockers"
+      },
+      {
+        "band": "medium",
+        "id": "R-007",
+        "residual_score": 8,
+        "title": "Exploitation of an unpatched vulnerability"
+      },
+      {
+        "band": "medium",
+        "id": "R-002",
+        "residual_score": 8,
+        "title": "Delayed incident detection breaching NIS2 24h/72h deadlines"
+      },
+      {
+        "band": "medium",
+        "id": "R-009",
+        "residual_score": 8,
+        "title": "Personal-data breach via application vulnerability"
+      }
+    ],
+    "total": 13
+  },
+  "training": {
+    "completions": 10,
+    "pass_pct": 90.0,
+    "passed": 9
+  }
+}

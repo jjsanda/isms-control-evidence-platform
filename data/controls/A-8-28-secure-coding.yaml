@@ -1,0 +1,33 @@
+# Control A.8.28 — Secure coding.
+id: "A.8.28"
+title: "Secure coding"
+theme: technological
+category: "Secure development"
+objective: >-
+  Apply secure coding principles to software development to reduce the number of security
+  vulnerabilities in the software produced.
+owner:
+  name: "Nina Blaha"
+  role: "Software Engineering Lead"
+  email: "nina.blaha@paketport.example"
+status: in_progress
+maturity: 2
+applicable: true
+inclusion_reason: best_practice
+soa_justification: >-
+  Developers follow secure coding standards to reduce vulnerabilities in the customer app and the
+  locker firmware.
+policy_refs: []
+evidence_refs: []
+risk_refs: ["R-009"]
+nis2_areas: [acq_dev_maintenance]
+implementation_notes: >-
+  Nina Blaha's team is formalising a secure coding standard — input validation, output encoding,
+  safe dependency use and secrets hygiene — with mandatory code review and SAST and dependency
+  scanning in CI for the app and firmware. The standard and its CI gates are in progress with no
+  formal evidence recorded yet, and secure coding directly addresses the personal-data breach risk
+  R-009; adoption will be evidenced once the CI gate is enforced.
+last_review: 2026-04-20
+next_review: 2026-07-30
+audit_status: draft
+tags: ["secure-coding", "sdlc"]

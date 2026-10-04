@@ -1,0 +1,18 @@
+# Evidence — incident triage log sample.
+id: "EV-011"
+title: "Incident triage log (sample)"
+type: log_export
+control_refs: ["A.5.25", "A.6.8"]
+collected_on: 2026-06-01
+collected_by:
+  name: "Tomas Horak"
+  role: "Security Engineer"
+  email: "tomas.horak@paketport.example"
+artifact_path: "evidence/artifacts/incident-triage-log.md"
+valid_from: 2026-06-01
+valid_until: 2026-12-01
+source: "manual"
+audit_status: accepted
+notes: >-
+  Sample of the incident triage log showing how security events and staff reports are classified,
+  deduplicated and either closed or promoted to incidents over a recent period.

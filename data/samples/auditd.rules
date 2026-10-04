@@ -1,0 +1,28 @@
+## PaketPort Systems - sample auditd baseline (subset) for edge + backend hosts.
+## Two required categories are intentionally missing (kernel-module load auditing and
+## config immutability) so the coverage collector reports a gap tracked by INIT-001.
+
+# Time changes
+-w /etc/localtime -p wa -k time-change
+-a always,exit -F arch=b64 -S adjtimex -S settimeofday -S clock_settime -k time-change
+
+# Identity / account files
+-w /etc/passwd -p wa -k identity
+-w /etc/shadow -p wa -k identity
+-w /etc/group -p wa -k identity
+
+# Logins
+-w /var/log/faillog -p wa -k logins
+-w /var/log/lastlog -p wa -k logins
+
+# Privileged command execution
+-a always,exit -F path=/usr/bin/sudo -F perm=x -F auid>=1000 -F auid!=unset -k privileged
+
+# Sudoers scope
+-w /etc/sudoers -p wa -k scope
+-w /etc/sudoers.d -p wa -k scope
+
+# Mandatory access control policy
+-w /etc/selinux/ -p wa -k MAC-policy
+
+## MISSING (tracked by INIT-001): kernel module load auditing, and config immutability.

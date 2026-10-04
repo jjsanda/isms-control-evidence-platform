@@ -1,0 +1,18 @@
+# Evidence — management review minutes.
+id: "EV-015"
+title: "Management review minutes"
+type: attestation
+control_refs: ["A.5.1"]
+collected_on: 2026-03-01
+collected_by:
+  name: "Dana Weber"
+  role: "Managing Director"
+  email: "dana.weber@paketport.example"
+artifact_path: "evidence/artifacts/management-review-minutes.md"
+valid_from: 2026-03-01
+valid_until: 2027-03-01
+source: "manual"
+audit_status: accepted
+notes: >-
+  Minutes of the top-management review confirming the ISMS policy set, security objectives,
+  resourcing and the corrective-action backlog.

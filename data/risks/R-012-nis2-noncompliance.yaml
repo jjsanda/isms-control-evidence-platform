@@ -1,0 +1,26 @@
+# Risk — non-compliance with NIS2 registration & reporting duties.
+id: "R-012"
+title: "Non-compliance with NIS2 registration & reporting duties"
+description: >-
+  PaketPort fails to meet its NIS2 registration, governance or incident-reporting duties, exposing
+  the company to regulatory sanction and the management body to liability.
+owner:
+  name: "Dana Weber"
+  role: "Managing Director"
+  email: "dana.weber@paketport.example"
+asset: "Regulatory compliance"
+threat: "Regulatory enforcement following missed obligations or reporting deadlines"
+vulnerability: "Evolving NIS2 duties and dependence on timely internal detection and escalation"
+inherent_likelihood: 2
+inherent_impact: 4
+treatment: mitigate
+mitigation: >-
+  A prepared incident-management and Art. 23 reporting workflow (A.5.24), and a top-management-owned
+  ISMS with clear accountability, objectives and management review (A.5.1). Registration status and
+  regulatory obligations are tracked and confirmed at management review.
+control_refs: ["A.5.24", "A.5.1"]
+residual_likelihood: 1
+residual_impact: 4
+target_date: 2026-08-01
+review_date: 2027-03-01
+acceptance: pending

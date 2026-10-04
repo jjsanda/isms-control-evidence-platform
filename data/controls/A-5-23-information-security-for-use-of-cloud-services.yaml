@@ -1,0 +1,33 @@
+# Control A.5.23 — Information security for use of cloud services.
+id: "A.5.23"
+title: "Information security for use of cloud services"
+theme: organizational
+category: "Cloud services"
+objective: >-
+  Establish processes for acquiring, using, managing and exiting cloud services in line with
+  PaketPort's information security requirements.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: contractual
+soa_justification: >-
+  The routing engine and app backend run in the public cloud, so cloud-security responsibilities
+  are defined, configured and monitored.
+policy_refs: ["POL-SUP"]
+evidence_refs: ["EV-009"]
+risk_refs: []
+nis2_areas: [supply_chain]
+implementation_notes: >-
+  The backend runs in a single EU cloud tenant hardened to a documented baseline (EV-009): enforced
+  MFA and SSO for the console, least-privilege IAM and guardrails, private networking, encrypted
+  storage, policy-as-code and centralised logging. Responsibilities follow the shared-responsibility
+  model recorded in POL-SUP, and an exit and data-portability position is documented for the routing
+  data.
+last_review: 2026-03-05
+next_review: 2027-03-05
+audit_status: accepted
+tags: ["cloud", "baseline"]

@@ -1,0 +1,16 @@
+flowchart LR
+    a["NIS2 (a) Risk analysis &amp; policies"] --> A["A.5.1"]
+    b["NIS2 (b) Incident handling"] --> B["A.5.24 · A.5.25 · A.6.8 · A.8.16"]
+    c["NIS2 (c) Business continuity &amp; backup"] --> C["A.5.30 · A.8.13"]
+    d["NIS2 (d) Supply-chain security"] --> D["A.5.19 · A.5.21 · A.5.23"]
+    e["NIS2 (e) Secure acq/dev + vuln handling"] --> E["A.8.8 · A.8.9 · A.8.28"]
+    f["NIS2 (f) Effectiveness assessment"] --> F["A.5.35"]
+    g["NIS2 (g) Cyber hygiene &amp; training"] --> G["A.6.3 · A.5.7"]
+    h["NIS2 (h) Cryptography"] --> H["A.8.24"]
+    i["NIS2 (i) HR, access &amp; asset mgmt"] --> I["A.5.9 · A.5.15 · A.8.2"]
+    j["NIS2 (j) MFA &amp; secure comms"] --> J["A.8.5 · A.8.20"]
+
+    classDef n fill:#EEF2FF,stroke:#4F46E5,color:#1E1B4B,rx:6,ry:6;
+    classDef ctrl fill:#DCFCE7,stroke:#059669,color:#065F46,rx:6,ry:6;
+    class a,b,c,d,e,f,g,h,i,j n;
+    class A,B,C,D,E,F,G,H,I,J ctrl;

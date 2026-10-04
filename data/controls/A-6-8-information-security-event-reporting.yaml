@@ -1,0 +1,32 @@
+# Control A.6.8 — Information security event reporting.
+id: "A.6.8"
+title: "Information security event reporting"
+theme: people
+category: "Event reporting"
+objective: >-
+  Provide a mechanism for personnel to report observed or suspected information security events
+  promptly and through appropriate channels.
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: best_practice
+soa_justification: >-
+  Staff and technicians need an easy, well-known channel to report suspected incidents such as
+  tampered lockers.
+policy_refs: ["POL-IR"]
+evidence_refs: ["EV-011"]
+risk_refs: []
+nis2_areas: [incident_handling]
+implementation_notes: >-
+  A single reporting channel — the security mailbox, a chat command and a phone hotline for field
+  staff — lets anyone raise a suspected event, including physical locker tampering; expectations are
+  set in POL-IR and the awareness training. Reports land in the triage queue and are logged
+  (EV-011), and no-blame reporting is emphasised to encourage early warning.
+last_review: 2026-03-12
+next_review: 2027-03-12
+audit_status: accepted
+tags: ["reporting", "incident-response"]

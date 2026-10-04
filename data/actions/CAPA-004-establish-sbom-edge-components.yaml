@@ -1,0 +1,18 @@
+# Improvement action — establish SBOM for third-party edge components.
+id: "CAPA-004"
+title: "Establish SBOM for third-party edge components"
+source: risk_assessment
+description: >-
+  To manage ICT supply-chain risk, establish a repeatable process to generate and assess software
+  bills of materials for the third-party components and base images used on the locker edge stack,
+  require provenance attestations from suppliers, and feed known-vulnerability findings into the
+  patch backlog.
+owner:
+  name: "Jan Fischer"
+  role: "Head of Procurement"
+  email: "jan.fischer@paketport.example"
+status: open
+opened_on: 2026-04-05
+due_date: 2026-08-15
+control_refs: ["A.5.21"]
+risk_refs: ["R-006"]

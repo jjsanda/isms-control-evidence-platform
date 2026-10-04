@@ -1,0 +1,27 @@
+# Risk — delayed incident detection breaching NIS2 deadlines.
+id: "R-002"
+title: "Delayed incident detection breaching NIS2 24h/72h deadlines"
+description: >-
+  PaketPort fails to detect a significant incident quickly enough to meet its NIS2 Art. 23
+  obligations (24-hour early warning, 72-hour notification), causing regulatory exposure and
+  prolonging attacker dwell time on the lockers or backend.
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+asset: "Incident response capability"
+threat: "Stealthy intrusion or service compromise that goes unnoticed"
+vulnerability: "Incomplete central logging and detection coverage across the locker fleet and backend"
+inherent_likelihood: 3
+inherent_impact: 5
+treatment: mitigate
+mitigation: >-
+  A prepared incident-management process with a defined NIS2 reporting workflow (A.5.24), plus
+  expanding monitoring and detection content and centralised logging (A.8.16) to shorten mean time
+  to detect. Tabletop exercises rehearse the reporting clock and escalation paths.
+control_refs: ["A.5.24", "A.8.16"]
+residual_likelihood: 2
+residual_impact: 4
+target_date: 2026-09-30
+review_date: 2027-01-15
+acceptance: pending

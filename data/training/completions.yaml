@@ -1,0 +1,82 @@
+# Completion records for the security-awareness training (TRN-001).
+records:
+  - person:
+      name: "Alex Rossi"
+      role: "Information Security Officer / ISMS Manager"
+      email: "alex.rossi@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-05-12
+    score: 1.0
+    passed: true
+  - person:
+      name: "Milan Novak"
+      role: "Head of Platform & SRE"
+      email: "milan.novak@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-05-14
+    score: 0.83
+    passed: true
+  - person:
+      name: "Sara Berger"
+      role: "IT Operations Lead"
+      email: "sara.berger@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-05-15
+    score: 1.0
+    passed: true
+  - person:
+      name: "Tomas Horak"
+      role: "Security Engineer"
+      email: "tomas.horak@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-05-13
+    score: 1.0
+    passed: true
+  - person:
+      name: "Petra Klein"
+      role: "HR Manager"
+      email: "petra.klein@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-05-20
+    score: 0.83
+    passed: true
+  - person:
+      name: "Karl Mayer"
+      role: "Facilities & Physical Security Lead"
+      email: "karl.mayer@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-05-22
+    score: 0.83
+    passed: true
+  - person:
+      name: "Nina Blaha"
+      role: "Software Engineering Lead"
+      email: "nina.blaha@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-06-01
+    score: 1.0
+    passed: true
+  - person:
+      name: "Eva Huber"
+      role: "Operations Agent"
+      email: "eva.huber@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-06-03
+    score: 0.83
+    passed: true
+  - person:
+      name: "Lukas Bauer"
+      role: "Support Agent"
+      email: "lukas.bauer@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-06-05
+    score: 0.67
+    passed: false
+  - person:
+      name: "Marek Novotny"
+      role: "Developer"
+      email: "marek.novotny@paketport.example"
+    training_ref: "TRN-001"
+    completed_on: 2026-06-08
+    score: 0.83
+    passed: true

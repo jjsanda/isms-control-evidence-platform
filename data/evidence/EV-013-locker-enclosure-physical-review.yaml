@@ -1,0 +1,18 @@
+# Evidence — locker enclosure physical security review.
+id: "EV-013"
+title: "Locker enclosure physical security review"
+type: screenshot
+control_refs: ["A.7.1"]
+collected_on: 2026-02-05
+collected_by:
+  name: "Karl Mayer"
+  role: "Facilities & Physical Security Lead"
+  email: "karl.mayer@paketport.example"
+artifact_path: "evidence/artifacts/locker-enclosure-review.md"
+valid_from: 2026-02-05
+valid_until: 2027-02-05
+source: "manual"
+audit_status: accepted
+notes: >-
+  Physical security review of a representative sample of locker enclosures, checking tamper-resistant
+  fixings, service-compartment locks and enclosure integrity, with photographs.

@@ -1,0 +1,17 @@
+# Supplier and cloud security policy.
+id: "POL-SUP"
+title: "Supplier & Cloud Security Policy"
+version: "1.1"
+owner:
+  name: "Jan Fischer"
+  role: "Head of Procurement"
+  email: "jan.fischer@paketport.example"
+approved_on: 2025-12-01
+next_review: 2026-12-01
+summary: >-
+  Governs information security across PaketPort's suppliers, ICT supply chain and cloud services.
+  Requires security due diligence and contractual clauses for carriers, hardware and software
+  vendors, SBOM and provenance assessment of third-party components, and a hardened, monitored
+  cloud configuration under the shared-responsibility model.
+control_refs: ["A.5.19", "A.5.21", "A.5.23"]
+document_path: "docs/policies/supplier-cloud-security-policy.md"

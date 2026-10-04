@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Statement of Applicability{% endblock %}
+{% block content %}
+<h1>Statement of Applicability</h1>
+<p class="subtitle">All {{ rows | length }} ISO/IEC 27001:2022 Annex A controls with the applicability
+decision. {{ metrics.documented_total }} have a full control record; the rest are covered at SoA level.</p>
+
+<div class="filterbar">
+  <input id="filter" placeholder="Filter by id, title, reason&hellip;" data-filter="#soa-table">
+  <span class="count-note"><span id="filter-count">{{ rows | length }}</span> of {{ rows | length }} shown</span>
+</div>
+
+<div class="table-wrap card" style="padding:0;">
+<table class="data" id="soa-table">
+  <thead><tr><th>Control</th><th>Title</th><th>Applicable</th><th>Reason</th><th>Documented</th><th>Justification</th></tr></thead>
+  <tbody>
+  {% for row in rows %}
+    <tr>
+      <td>{% if row.documented %}<a href="/controls/{{ row.entry.control_id }}">{{ row.entry.control_id }}</a>{% else %}{{ row.entry.control_id }}{% endif %}</td>
+      <td>{{ row.control.title if row.control else '' }}{% if row.control and row.control.is_new_2022 %} <span class="tag">new 2022</span>{% endif %}</td>
+      <td>{{ 'Yes' if row.entry.applicable else 'No' }}</td>
+      <td>{{ label(row.entry.inclusion_reason) }}</td>
+      <td>{% if row.documented %}<span class="pill" style="color:#059669">full record</span>{% else %}<span class="muted">SoA only</span>{% endif %}</td>
+      <td>{{ row.entry.justification }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/filter.js"></script>{% endblock %}

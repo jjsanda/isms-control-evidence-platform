@@ -1,0 +1,18 @@
+# Improvement action — roll out MFA to all admin and edge-management access.
+id: "CAPA-001"
+title: "Roll out MFA to all admin & edge-management access"
+source: internal_audit
+description: >-
+  The internal audit found that MFA is enforced for the cloud console and core backend but not yet
+  for every administrative and locker fleet-management path, including some technician access.
+  Extend phishing-resistant MFA to all remaining admin and edge-management entry points and retire
+  any local password-only paths.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+status: in_progress
+opened_on: 2026-04-15
+due_date: 2026-08-31
+control_refs: ["A.8.5"]
+risk_refs: ["R-004", "R-005"]

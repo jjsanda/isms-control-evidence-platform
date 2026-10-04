@@ -1,0 +1,59 @@
+# Organisation profile and ISMS scope — PaketPort Systems GmbH.
+name: "PaketPort Systems GmbH"
+legal_form: "Gesellschaft mit beschränkter Haftung (GmbH)"
+sector: "Parcel-locker logistics — postal and courier services (NIS2 essential entity)"
+certification_target: "ISO/IEC 27001:2022"
+isms_scope: >-
+  The ISMS covers the design, operation, monitoring and continual improvement of PaketPort
+  Systems GmbH's parcel-locker service: the internet-facing Linux edge devices (street-sited
+  lockers) and their fleet-management plane, the cloud-hosted backend (customer application,
+  parcel-routing engine and carrier-API integrations), the supporting corporate IT and identity
+  services, and the people and processes that operate them. It encompasses the end-to-end
+  processing of customers' personal data — names, contact details, delivery addresses and
+  parcel-event records — from locker to backend to carrier, and the related NIS2 and GDPR
+  obligations of an Austrian essential entity.
+scope_boundary: >-
+  In scope: all production locker edge devices and the OTA/fleet-management plane; the cloud
+  backend, its data stores and APIs; the CI/CD pipeline and source repositories for the customer
+  app and locker firmware; corporate endpoints, identity and email; and the Vienna head office,
+  security operations centre and provisioning depot. Out of scope: the public cloud provider's
+  underlying physical infrastructure (addressed under the shared-responsibility model and the
+  provider's own certifications), carrier partners' internal networks and systems, and the public
+  street locations where lockers stand beyond the locker enclosure itself. Interfaces to these
+  out-of-scope parties are governed by supplier agreements and monitored as third-party risk.
+policy_statement: >-
+  PaketPort's management, led by the Managing Director, is committed to protecting the
+  confidentiality, integrity and availability of the information entrusted to it by customers,
+  carriers and staff. We establish, operate and continually improve an information security
+  management system aligned to ISO/IEC 27001:2022 and to our duties as a NIS2 essential entity;
+  we set and review measurable security objectives, provide the resources to meet them, comply
+  with applicable legal and contractual requirements including the GDPR, and require every
+  employee and contractor to understand and uphold this commitment. Security responsibilities are
+  assigned, risks are managed to defined criteria, and this policy is reviewed at least annually.
+employees: 120
+locations:
+  - "Vienna, Austria — head office and security operations centre"
+  - "Vienna, Austria — logistics and locker-provisioning depot"
+  - "Public street and retail sites across Austria — installed locker estate"
+  - "EU public cloud (primary region) with a secondary region for failover"
+key_services:
+  - "Parcel deposit and collection via street-sited lockers for consumers and carriers"
+  - "Customer mobile and web application"
+  - "Parcel-routing and slot-allocation engine"
+  - "Carrier API integrations for labels, tracking and handover events"
+  - "Locker fleet management and signed over-the-air (OTA) firmware delivery"
+key_assets:
+  - "Linux locker edge devices (street-sited)"
+  - "Cloud backend services and databases"
+  - "Customer personal data and parcel-event records"
+  - "Locker firmware and customer-application source code"
+  - "Administrative and carrier-API credentials and cryptographic keys"
+  - "Centralised logging, monitoring and CMDB platform"
+isms_owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+management_representative:
+  name: "Dana Weber"
+  role: "Managing Director"
+  email: "dana.weber@paketport.example"

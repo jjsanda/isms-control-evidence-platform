@@ -1,0 +1,27 @@
+# Risk — personal-data breach via application vulnerability.
+id: "R-009"
+title: "Personal-data breach via application vulnerability"
+description: >-
+  A vulnerability in the customer application or API is exploited to access or exfiltrate
+  customers' personal data (names, addresses, parcel history), triggering GDPR and NIS2 breach
+  obligations and reputational harm.
+owner:
+  name: "Lena Vogel"
+  role: "Data Protection Officer"
+  email: "lena.vogel@paketport.example"
+asset: "Customer personal data"
+threat: "Exploitation of an application-layer vulnerability such as injection or broken access control"
+vulnerability: "Coding defects and gaps in secure-development and testing controls"
+inherent_likelihood: 3
+inherent_impact: 5
+treatment: mitigate
+mitigation: >-
+  A secure coding standard with SAST and mandatory code review (A.8.28); vulnerability management
+  with remediation SLAs (A.8.8); and encryption of personal data in transit and at rest (A.8.24).
+  The Data Protection Officer oversees personal-data risk and breach handling.
+control_refs: ["A.8.28", "A.8.8", "A.8.24"]
+residual_likelihood: 2
+residual_impact: 4
+target_date: 2026-09-30
+review_date: 2027-01-30
+acceptance: pending

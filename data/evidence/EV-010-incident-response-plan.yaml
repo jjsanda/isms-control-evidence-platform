@@ -1,0 +1,19 @@
+# Evidence — approved incident response plan.
+id: "EV-010"
+title: "Incident response plan (approved)"
+type: policy_doc
+control_refs: ["A.5.24"]
+collected_on: 2026-03-10
+collected_by:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+artifact_path: "evidence/artifacts/incident-response-plan.md"
+valid_from: 2026-03-10
+valid_until: 2027-03-10
+source: "manual"
+audit_status: accepted
+notes: >-
+  The approved information security incident response plan, including the severity model, on-call
+  roles and escalation, and the NIS2 Art. 23 reporting workflow with its 24-hour, 72-hour and
+  one-month deadlines.

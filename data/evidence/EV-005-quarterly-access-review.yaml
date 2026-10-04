@@ -1,0 +1,19 @@
+# Evidence — quarterly access review (joiners/movers/leavers).
+id: "EV-005"
+title: "Quarterly access review (joiners/movers/leavers)"
+type: access_review
+control_refs: ["A.5.15", "A.8.2", "A.8.5"]
+collected_on: 2026-06-30
+collected_by:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+artifact_path: "evidence/artifacts/access-review-record.md"
+valid_from: 2026-06-30
+valid_until: 2026-09-30
+source: "collector:access_review"
+audit_status: accepted
+notes: >-
+  Quarterly joiner-mover-leaver access review across the backend, cloud console and locker
+  fleet-management plane, recording reviewer sign-off, privileged-role confirmation and the
+  entitlements that were revoked.

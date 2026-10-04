@@ -1,0 +1,32 @@
+# Control A.8.13 — Information backup.
+id: "A.8.13"
+title: "Information backup"
+theme: technological
+category: "Continuity"
+objective: >-
+  Maintain and regularly test backup copies of information, software and systems in line with an
+  agreed backup policy.
+owner:
+  name: "Sara Berger"
+  role: "IT Operations Lead"
+  email: "sara.berger@paketport.example"
+status: operating
+maturity: 3
+applicable: true
+inclusion_reason: business
+soa_justification: >-
+  Backups of the backend and configuration guard against data loss and enable recovery within
+  agreed RPO and RTO.
+policy_refs: ["POL-BC"]
+evidence_refs: ["EV-004"]
+risk_refs: ["R-003"]
+nis2_areas: [business_continuity]
+implementation_notes: >-
+  Backend databases and critical configuration are backed up on an automated schedule meeting a
+  one-hour RPO, encrypted at rest and replicated to a second region with restricted, MFA-gated
+  access. Restores are exercised and recorded (EV-004) rather than assumed, and backup scope,
+  retention and encryption are set in POL-BC.
+last_review: 2026-03-01
+next_review: 2027-03-01
+audit_status: accepted
+tags: ["backup", "recovery"]

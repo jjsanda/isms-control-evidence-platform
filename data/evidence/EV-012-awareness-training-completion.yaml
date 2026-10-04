@@ -1,0 +1,18 @@
+# Evidence — awareness training completion report.
+id: "EV-012"
+title: "Awareness training completion report"
+type: training_record
+control_refs: ["A.6.3"]
+collected_on: 2026-06-05
+collected_by:
+  name: "Petra Klein"
+  role: "HR Manager"
+  email: "petra.klein@paketport.example"
+artifact_path: "evidence/artifacts/training-completion.md"
+valid_from: 2026-06-05
+valid_until: 2026-12-05
+source: "manual"
+audit_status: accepted
+notes: >-
+  Completion report for the annual security-awareness training (TRN-001) and its quiz, with
+  per-person pass status and follow-up for staff who have not yet passed.

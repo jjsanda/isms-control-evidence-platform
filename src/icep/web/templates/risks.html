@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Risks{% endblock %}
+{% block content %}
+<h1>Risk register</h1>
+<p class="subtitle">{{ risks | length }} risks assessed on a 5&times;5 likelihood &times; impact scale,
+before and after treatment.</p>
+
+<div class="grid charts">
+  <div class="card">
+    <h2>Residual risk heatmap</h2>
+    <div style="text-align:center;">{{ heatmap | safe }}</div>
+  </div>
+  <div class="card">
+    <h2>Bands</h2>
+    <p class="prose muted">Score = likelihood &times; impact (1&ndash;25). Colour is never the only
+    signal &mdash; the band label is always shown.</p>
+    <ul class="legend" style="flex-direction:column;">
+      <li><span class="dot" style="background:#2f9e44"></span>Low &mdash; score &le; 4</li>
+      <li><span class="dot" style="background:#f59f00"></span>Medium &mdash; 5&ndash;9</li>
+      <li><span class="dot" style="background:#e8590c"></span>High &mdash; 10&ndash;14</li>
+      <li><span class="dot" style="background:#c92a2a"></span>Critical &mdash; &ge; 15</li>
+    </ul>
+    <p class="prose"><strong>{{ metrics.risks_accepted }}</strong> risks are formally accepted;
+    <strong>{{ metrics.risks_high_or_critical_open }}</strong> residual high/critical risks remain unaccepted.</p>
+  </div>
+</div>
+
+<h2>All risks (by residual score)</h2>
+<div class="table-wrap card" style="padding:0;">
+<table class="data">
+  <thead><tr><th>ID</th><th>Title</th><th>Owner</th><th>Inherent</th><th>Treatment</th><th>Residual</th><th>Acceptance</th><th>Target</th></tr></thead>
+  <tbody>
+  {% for r in risks %}
+    <tr>
+      <td><a href="/risks/{{ r.id }}">{{ r.id }}</a></td>
+      <td>{{ r.title }}</td>
+      <td>{{ r.owner.name }}</td>
+      <td><span class="pill" style="color: {{ band_color(r.inherent_band) }}">{{ label(r.inherent_band) }} {{ r.inherent_score }}</span></td>
+      <td>{{ label(r.treatment) }}</td>
+      <td><span class="pill" style="color: {{ band_color(r.residual_band) }}">{{ label(r.residual_band) }} {{ r.residual_score }}</span></td>
+      <td>{{ label(r.acceptance) }}{% if r.accepted_by %}<br><span class="muted">by {{ r.accepted_by.name }}</span>{% endif %}</td>
+      <td>{{ r.target_date | dateiso }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

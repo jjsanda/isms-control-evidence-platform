@@ -1,0 +1,17 @@
+# Top-level ISMS policy.
+id: "POL-ISMS"
+title: "Information Security Policy"
+version: "2.0"
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+approved_on: 2025-09-01
+next_review: 2026-09-01
+summary: >-
+  Sets PaketPort's top-management commitment to information security and the framework for the
+  ISMS aligned to ISO/IEC 27001:2022 and NIS2. Defines security objectives, roles and
+  accountabilities, the risk-management approach and the requirement for independent review and
+  continual improvement, and mandates the supporting topic-specific policies.
+control_refs: ["A.5.1", "A.5.35"]
+document_path: "docs/policies/information-security-policy.md"

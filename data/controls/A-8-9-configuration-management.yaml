@@ -1,0 +1,33 @@
+# Control A.8.9 — Configuration management.
+id: "A.8.9"
+title: "Configuration management"
+theme: technological
+category: "Secure configuration"
+objective: >-
+  Establish, document, implement, monitor and review secure configurations of hardware, software,
+  services and networks.
+owner:
+  name: "Sara Berger"
+  role: "IT Operations Lead"
+  email: "sara.berger@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Secure, consistent baselines are defined and enforced across the Linux locker fleet and cloud
+  services.
+policy_refs: ["POL-VULN"]
+evidence_refs: ["EV-001"]
+risk_refs: ["R-007"]
+nis2_areas: [acq_dev_maintenance]
+implementation_notes: >-
+  Locker edge devices and backend hosts are provisioned from version-controlled, immutable
+  baselines managed as code (Ansible and container images), with drift detected and reverted. An
+  sshd hardening check across the fleet (EV-001) evidences the SSH baseline — key-only
+  authentication, no root login and restricted ciphers — and two high findings are being closed
+  under CAPA-003; changes flow through review under POL-VULN.
+last_review: 2026-03-01
+next_review: 2027-03-01
+audit_status: accepted
+tags: ["configuration", "hardening"]

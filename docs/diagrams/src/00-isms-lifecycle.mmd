@@ -1,0 +1,10 @@
+flowchart LR
+    Plan["<b>PLAN</b><br/>Understand the business,<br/>assess risks, decide which<br/>controls apply (SoA)"]
+    Do["<b>DO</b><br/>Implement controls &amp;<br/>policies, collect evidence<br/>(configs, scans, reviews)"]
+    Check["<b>CHECK</b><br/>Measure KPIs, run internal<br/>audits, track review &amp;<br/>expiry status"]
+    Act["<b>ACT</b><br/>Fix gaps with improvement<br/>actions, hold management<br/>review, raise maturity"]
+
+    Plan --> Do --> Check --> Act --> Plan
+
+    classDef phase fill:#EEF2FF,stroke:#4F46E5,color:#1E1B4B,rx:10,ry:10;
+    class Plan,Do,Check,Act phase;

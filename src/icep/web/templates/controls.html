@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Controls{% endblock %}
+{% block content %}
+<h1>Control register</h1>
+<p class="subtitle">{{ controls | length }} documented Annex A controls of {{ metrics.catalog_total }},
+mapped to owners, evidence, risks and review dates.</p>
+
+<div class="filterbar">
+  <input id="filter" placeholder="Filter by id, title, owner, status&hellip;" data-filter="#controls-table">
+  <span class="count-note"><span id="filter-count">{{ controls | length }}</span> of {{ controls | length }} shown</span>
+</div>
+
+<div class="table-wrap card" style="padding:0;">
+<table class="data" id="controls-table">
+  <thead><tr>
+    <th>ID</th><th>Title</th><th>Theme</th><th>Owner</th><th>Status</th>
+    <th class="right">Maturity</th><th>Audit</th><th>Next review</th>
+    <th class="right">Ev.</th><th class="right">Risks</th>
+  </tr></thead>
+  <tbody>
+  {% for c in controls %}
+    {% set eff = effective_audit_of(c.audit_status, c.next_review, today) %}
+    {% set rev = review_state_of(c.next_review, today, warn_days) %}
+    <tr>
+      <td><a href="/controls/{{ c.id }}">{{ c.id }}</a></td>
+      <td>{{ c.title }}</td>
+      <td>{{ label(c.theme) }}</td>
+      <td>{{ c.owner.name }}</td>
+      <td><span class="pill" style="color: {{ status_color(c.status) }}">{{ label(c.status) }}</span></td>
+      <td class="num-cell">{{ c.maturity }}/5</td>
+      <td><span class="pill" style="color: {{ audit_color(eff) }}">{{ label(eff) }}</span></td>
+      <td>{{ c.next_review | dateiso }}
+        {% if rev.value != 'current' %}<span class="pill" style="color: {{ review_color(rev) }}">{{ label(rev) }}</span>{% endif %}
+      </td>
+      <td class="num-cell">{{ c.evidence_refs | length }}</td>
+      <td class="num-cell">{{ c.risk_refs | length }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/filter.js"></script>{% endblock %}

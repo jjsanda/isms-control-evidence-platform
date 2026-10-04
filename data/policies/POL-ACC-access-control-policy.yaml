@@ -1,0 +1,17 @@
+# Access control policy.
+id: "POL-ACC"
+title: "Access Control Policy"
+version: "1.3"
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+approved_on: 2025-10-15
+next_review: 2026-10-15
+summary: >-
+  Defines how logical and physical access to PaketPort's backend, locker fleet-management plane
+  and personal data is granted, changed and revoked on least-privilege, need-to-know principles.
+  Covers identity lifecycle and joiner-mover-leaver, privileged access, secure authentication and
+  MFA, and quarterly access reviews.
+control_refs: ["A.5.15", "A.8.2", "A.8.5"]
+document_path: "docs/policies/access-control-policy.md"

@@ -1,0 +1,33 @@
+# Control A.5.1 — Policies for information security.
+id: "A.5.1"
+title: "Policies for information security"
+theme: organizational
+category: "Governance"
+objective: >-
+  Provide management direction and support for information security through a coherent set of
+  approved, communicated and periodically reviewed policies.
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+status: operating
+maturity: 4
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  A top-level information security policy sets PaketPort's direction and is mandated by ISO/IEC
+  27001 clause 5.2.
+policy_refs: ["POL-ISMS"]
+evidence_refs: ["EV-015"]
+risk_refs: ["R-012"]
+nis2_areas: [risk_analysis, management_accountability]
+implementation_notes: >-
+  PaketPort maintains a top-level Information Security Policy (POL-ISMS) approved by the Managing
+  Director, plus a supporting set of topic-specific policies covering access, incident response,
+  backup, suppliers, vulnerabilities, HR and cryptography. Policies are version-controlled in the
+  ISMS repository, published on the staff intranet and reviewed at least annually or after
+  significant change; the March 2026 management review re-confirmed the policy set (EV-015).
+last_review: 2026-03-01
+next_review: 2027-03-01
+audit_status: accepted
+tags: ["governance", "policy"]

@@ -1,0 +1,26 @@
+# Risk — supplier or cloud provider compromise.
+id: "R-006"
+title: "Supplier or cloud provider compromise"
+description: >-
+  A compromise at a carrier, the cloud provider or a hardware/software supplier propagates into
+  PaketPort's services or data through the access or components those parties provide.
+owner:
+  name: "Jan Fischer"
+  role: "Head of Procurement"
+  email: "jan.fischer@paketport.example"
+asset: "ICT supply chain"
+threat: "Supply-chain compromise or a breach at a third party with access or components"
+vulnerability: "Dependence on external providers with incomplete assurance and monitoring of the supply chain"
+inherent_likelihood: 3
+inherent_impact: 4
+treatment: mitigate
+mitigation: >-
+  Supplier due diligence, contractual security clauses and periodic reviews (A.5.19); ICT
+  supply-chain assessment including SBOMs for third-party components (A.5.21); and a hardened,
+  monitored cloud configuration under the shared-responsibility model (A.5.23).
+control_refs: ["A.5.19", "A.5.21", "A.5.23"]
+residual_likelihood: 2
+residual_impact: 3
+target_date: 2026-08-15
+review_date: 2026-12-15
+acceptance: pending

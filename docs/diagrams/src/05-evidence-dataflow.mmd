@@ -1,0 +1,22 @@
+flowchart LR
+    S["<b>Linux samples</b><br/>sshd_config · auditd.rules<br/>Trivy report · backup jobs<br/>access &amp; HR exports"]
+    Col["<b>Collectors</b><br/>parse &amp; check against<br/>a baseline (icep seed)"]
+    Art["<b>Evidence artifacts</b><br/>Markdown reports with<br/>pass / warn / fail findings"]
+    Hash["<b>SHA-256</b><br/>evidence/manifest.json"]
+    Rec["<b>Evidence records</b><br/>data/evidence/*.yaml"]
+    Ctrl["<b>Controls</b><br/>A.8.9 · A.8.15/16 · A.8.8<br/>A.8.13 · A.5.15/8.2/8.5"]
+    Pack["<b>Audit pack</b><br/>evidence index + hashes"]
+
+    S --> Col --> Art
+    Art --> Hash
+    Rec -. references .-> Art
+    Rec --> Ctrl
+    Hash --> Pack
+    Ctrl --> Pack
+
+    classDef in fill:#E0E7FF,stroke:#4F46E5,color:#1E1B4B,rx:8,ry:8;
+    classDef proc fill:#EEF2FF,stroke:#4F46E5,color:#1E1B4B,rx:8,ry:8;
+    classDef out fill:#DCFCE7,stroke:#059669,color:#065F46,rx:8,ry:8;
+    class S,Rec in;
+    class Col,Art,Hash proc;
+    class Ctrl,Pack out;

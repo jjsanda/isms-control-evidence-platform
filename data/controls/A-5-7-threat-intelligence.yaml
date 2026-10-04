@@ -1,0 +1,33 @@
+# Control A.5.7 — Threat intelligence.
+id: "A.5.7"
+title: "Threat intelligence"
+theme: organizational
+category: "Threat intelligence"
+objective: >-
+  Collect and analyse information about information security threats so that PaketPort can take
+  informed, proactive defensive action.
+owner:
+  name: "Tomas Horak"
+  role: "Security Engineer"
+  email: "tomas.horak@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Internet-facing lockers are continuously scanned and probed, so threat intelligence directly
+  informs defence of the edge and the APIs.
+policy_refs: []
+evidence_refs: ["EV-016"]
+risk_refs: []
+nis2_areas: [cyber_hygiene_training]
+implementation_notes: >-
+  Tomas Horak curates threat intelligence from CERT.at advisories, the national CSIRT, vendor feeds
+  for the locker Linux distribution and CVE/OSV sources for the backend dependency stack. Relevant
+  indicators and advisories are triaged weekly and feed vulnerability prioritisation, firewall/WAF
+  rules and detection content, and a monthly briefing (EV-016) is shared with platform and security
+  engineering.
+last_review: 2026-02-10
+next_review: 2027-02-10
+audit_status: accepted
+tags: ["threat-intel", "detection"]

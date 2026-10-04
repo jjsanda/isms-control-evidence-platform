@@ -1,0 +1,19 @@
+# Evidence — cloud tenant hardening baseline.
+id: "EV-009"
+title: "Cloud tenant hardening baseline"
+type: config_export
+control_refs: ["A.5.23"]
+collected_on: 2026-03-05
+collected_by:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+artifact_path: "evidence/artifacts/cloud-baseline.md"
+valid_from: 2026-03-05
+valid_until: 2027-03-05
+source: "manual"
+audit_status: accepted
+notes: >-
+  Export of the cloud tenant hardening baseline: least-privilege IAM and guardrails, enforced
+  MFA/SSO on the console, private networking, encryption of storage and centralised logging
+  settings.

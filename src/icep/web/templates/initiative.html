@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ initiative.id }}{% endblock %}
+{% block content %}
+<div class="crumb"><a href="/">Overview</a> / Initiative</div>
+<h1>{{ initiative.id }} &middot; {{ initiative.title }}</h1>
+<p class="subtitle">Security project / proof-of-concept &middot;
+  <span class="pill" style="color: var(--indigo-dark);">{{ label(initiative.status) }}</span></p>
+
+<div class="detail-grid">
+  <div class="card">
+    <h2>Concept</h2>
+    <p class="prose">{{ initiative.concept }}</p>
+    <h2>Objective</h2>
+    <p class="prose">{{ initiative.objective }}</p>
+
+    <h2>Implementation tasks ({{ initiative.tasks_done }}/{{ initiative.tasks | length }} done)</h2>
+    <ul class="clean">
+      {% for t in initiative.tasks %}
+      <li>{{ t.title }}
+        <span class="pill" style="float:right; color: {{ '#059669' if t.status.value == 'done' else '#3b82f6' if t.status.value == 'in_progress' else '#94a3b8' }};">{{ label(t.status) }}</span>
+        <span class="muted">{{ t.owner }}</span></li>
+      {% endfor %}
+    </ul>
+
+    <h2>Acceptance criteria ({{ initiative.criteria_met }}/{{ initiative.acceptance_criteria | length }} met)</h2>
+    <ul class="clean">
+      {% for ac in initiative.acceptance_criteria %}
+      <li>{% if ac.met %}<span class="status-pass">&#10003;</span>{% else %}<span class="muted">&#9633;</span>{% endif %}
+        {{ ac.text }}{% if ac.evidence_ref %} &middot; <a href="/evidence/{{ ac.evidence_ref }}">{{ ac.evidence_ref }}</a>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <aside class="card">
+    <h2>Summary</h2>
+    <dl class="facts">
+      <dt>Owner</dt><dd>{{ initiative.owner.name }}<br><span class="muted">{{ initiative.owner.role }}</span></dd>
+      <dt>Status</dt><dd>{{ label(initiative.status) }}</dd>
+      <dt>Controls</dt><dd>{% for cid in initiative.control_refs %}<a href="/controls/{{ cid }}">{{ cid }}</a> {% endfor %}</dd>
+      <dt>NIS2</dt><dd>{% for a in initiative.nis2_areas %}<span class="tag">{{ label(a) }}</span> {% endfor %}</dd>
+      <dt>Evidence</dt><dd>{% for eid in initiative.evidence_refs %}<a href="/evidence/{{ eid }}">{{ eid }}</a> {% endfor %}</dd>
+    </dl>
+  </aside>
+</div>
+{% endblock %}

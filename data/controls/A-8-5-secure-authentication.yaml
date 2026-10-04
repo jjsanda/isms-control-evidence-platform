@@ -1,0 +1,33 @@
+# Control A.8.5 — Secure authentication.
+id: "A.8.5"
+title: "Secure authentication"
+theme: technological
+category: "Authentication"
+objective: >-
+  Implement secure authentication technologies and procedures based on access restrictions and the
+  information security policy.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+status: in_progress
+maturity: 2
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Strong, phishing-resistant authentication protects administrative, staff and API access to
+  lockers and the cloud.
+policy_refs: ["POL-ACC"]
+evidence_refs: ["EV-005"]
+risk_refs: ["R-004", "R-005"]
+nis2_areas: [mfa_comms]
+implementation_notes: >-
+  SSO with MFA is enforced for the cloud console and core backend, and the programme to extend MFA
+  to all administrative and edge-management paths (including technician access to the fleet plane)
+  is in progress under CAPA-001, with the next review due shortly. Password policy follows current
+  NIST-style guidance, and service-to-service authentication uses short-lived tokens and mTLS;
+  remaining local admin paths are the priority gap.
+last_review: 2026-04-10
+next_review: 2026-07-20
+audit_status: reviewed
+tags: ["authentication", "mfa"]

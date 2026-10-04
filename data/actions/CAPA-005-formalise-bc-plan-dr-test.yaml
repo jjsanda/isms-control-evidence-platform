@@ -1,0 +1,17 @@
+# Improvement action — formalise the BC plan and run the first DR test.
+id: "CAPA-005"
+title: "Formalise BC plan and run first DR test"
+source: management_review
+description: >-
+  Management review directed that the ICT continuity capability be formalised. Complete and approve
+  the ICT business continuity plan under POL-BC and conduct the first full disaster-recovery test of
+  the backend against the four-hour RTO and one-hour RPO targets, recording the results as evidence.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+status: in_progress
+opened_on: 2026-04-02
+due_date: 2026-09-01
+control_refs: ["A.5.30"]
+risk_refs: ["R-003"]

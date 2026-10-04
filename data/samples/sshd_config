@@ -1,0 +1,27 @@
+# PaketPort Systems - sample sshd_config for a locker edge device (baseline under review).
+# NOTE: this sample deliberately contains a few weak settings so the hardening collector
+# produces real findings for the demo. It is not a recommended configuration.
+
+Port 22
+Protocol 2
+AddressFamily inet
+
+# --- Authentication ---
+PermitRootLogin yes
+PasswordAuthentication yes
+PermitEmptyPasswords no
+HostbasedAuthentication no
+IgnoreRhosts yes
+PubkeyAuthentication yes
+MaxAuthTries 4
+LoginGraceTime 60
+
+# --- Session ---
+X11Forwarding yes
+ClientAliveInterval 300
+ClientAliveCountMax 1
+AllowTcpForwarding no
+
+# --- Crypto ---
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes256-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com

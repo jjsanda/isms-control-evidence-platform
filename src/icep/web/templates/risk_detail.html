@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ risk.id }}{% endblock %}
+{% block content %}
+<div class="crumb"><a href="/risks">Risks</a> / {{ risk.id }}</div>
+<h1>{{ risk.id }} &middot; {{ risk.title }}</h1>
+<p class="subtitle">Asset: {{ risk.asset }} &middot; Owner: {{ risk.owner.name }} ({{ risk.owner.role }})</p>
+
+<div class="detail-grid">
+  <div class="card">
+    <h2>Description</h2>
+    <p class="prose">{{ risk.description }}</p>
+    <dl class="facts">
+      <dt>Threat</dt><dd>{{ risk.threat }}</dd>
+      <dt>Vulnerability</dt><dd>{{ risk.vulnerability }}</dd>
+    </dl>
+    <h2>Treatment</h2>
+    <p class="prose"><span class="tag">{{ label(risk.treatment) }}</span> {{ risk.mitigation }}</p>
+    <h2>Controls applied</h2>
+    <ul class="clean">
+      {% for c in controls %}
+      <li><a href="/controls/{{ c.id }}">{{ c.id }}</a> {{ c.title }}
+        <span class="pill" style="color: {{ status_color(c.status) }}; float:right;">{{ label(c.status) }}</span></li>
+      {% else %}
+      <li class="muted">No controls linked.</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <aside class="card">
+    <h2>Assessment</h2>
+    <dl class="facts">
+      <dt>Inherent</dt><dd><span class="pill" style="color: {{ band_color(risk.inherent_band) }}">{{ label(risk.inherent_band) }} {{ risk.inherent_score }}</span>
+        <br><span class="muted">L{{ risk.inherent_likelihood }} &times; I{{ risk.inherent_impact }}</span></dd>
+      <dt>Residual</dt><dd><span class="pill" style="color: {{ band_color(risk.residual_band) }}">{{ label(risk.residual_band) }} {{ risk.residual_score }}</span>
+        <br><span class="muted">L{{ risk.residual_likelihood }} &times; I{{ risk.residual_impact }}</span></dd>
+      <dt>Reduction</dt><dd>{{ risk.reduction }} points</dd>
+      <dt>Acceptance</dt><dd>{{ label(risk.acceptance) }}{% if risk.accepted_by %}<br><span class="muted">{{ risk.accepted_by.name }}</span>{% endif %}</dd>
+      {% if risk.acceptance_rationale %}<dt>Rationale</dt><dd>{{ risk.acceptance_rationale }}</dd>{% endif %}
+      <dt>Target date</dt><dd>{{ risk.target_date | dateiso }}</dd>
+      <dt>Review date</dt><dd>{{ risk.review_date | dateiso }}</dd>
+    </dl>
+  </aside>
+</div>
+{% endblock %}

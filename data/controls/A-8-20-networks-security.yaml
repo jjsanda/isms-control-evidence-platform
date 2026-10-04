@@ -1,0 +1,32 @@
+# Control A.8.20 — Networks security.
+id: "A.8.20"
+title: "Networks security"
+theme: technological
+category: "Network security"
+objective: >-
+  Secure, manage and control networks and network devices to protect information in systems and
+  applications.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  The networks linking lockers, cloud and carriers must be secured against unauthorised access and
+  interception.
+policy_refs: []
+evidence_refs: ["EV-018"]
+risk_refs: ["R-011"]
+nis2_areas: [mfa_comms]
+implementation_notes: >-
+  Lockers connect to the backend over mutually authenticated TLS across a dedicated APN/VPN, and
+  management, corporate and locker traffic are segregated. The customer-facing API sits behind a WAF
+  and DDoS protection (addressing R-011), ingress is default-deny with tightly scoped security
+  groups, and a network segmentation and TLS configuration export (EV-018) evidences the design.
+last_review: 2026-03-08
+next_review: 2027-03-08
+audit_status: accepted
+tags: ["network", "segmentation"]

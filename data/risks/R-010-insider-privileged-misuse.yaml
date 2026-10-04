@@ -1,0 +1,34 @@
+# Risk — insider misuse of privileged access (residual risk accepted).
+id: "R-010"
+title: "Insider misuse of privileged access"
+description: >-
+  A trusted administrator misuses privileged access to view, alter or exfiltrate data, or to
+  disrupt the locker service, whether maliciously or through negligence.
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+asset: "Privileged accounts"
+threat: "Malicious or negligent insider holding privileged access"
+vulnerability: "Trust inherent in administration by a small team with limited separation of duties"
+inherent_likelihood: 2
+inherent_impact: 5
+treatment: accept
+mitigation: >-
+  Minimised, individually assigned privileged access with MFA and just-in-time elevation (A.8.2),
+  and privileged-session logging to a tamper-evident store with alerting on misuse (A.8.15). The
+  residual risk is accepted by management as within appetite and kept under monitoring.
+control_refs: ["A.8.2", "A.8.15"]
+residual_likelihood: 2
+residual_impact: 3
+target_date: 2026-06-30
+review_date: 2027-06-30
+acceptance: accepted
+accepted_by:
+  name: "Dana Weber"
+  role: "Managing Director"
+  email: "dana.weber@paketport.example"
+acceptance_rationale: >-
+  Residual risk is within PaketPort's risk appetite given minimised, MFA-protected and logged
+  privileged access and the small size of the trusted administration team; accepted by the
+  Managing Director and kept under continuous monitoring and quarterly access review.

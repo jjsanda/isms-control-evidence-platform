@@ -1,0 +1,33 @@
+# Control A.5.21 — Managing information security in the ICT supply chain.
+id: "A.5.21"
+title: "Managing information security in the ICT supply chain"
+theme: organizational
+category: "Supplier relationships"
+objective: >-
+  Manage the information security risks arising along the ICT supply chain for products and
+  services acquired by PaketPort.
+owner:
+  name: "Jan Fischer"
+  role: "Head of Procurement"
+  email: "jan.fischer@paketport.example"
+status: in_progress
+maturity: 2
+applicable: true
+inclusion_reason: contractual
+soa_justification: >-
+  Locker firmware and cloud components arrive through a supply chain that must be assessed for
+  tampering and hidden vulnerabilities.
+policy_refs: ["POL-SUP"]
+evidence_refs: ["EV-008"]
+risk_refs: ["R-006"]
+nis2_areas: [supply_chain]
+implementation_notes: >-
+  PaketPort is standing up a process to obtain and assess software bills of materials for
+  third-party edge components and container base images and to require secure-development and
+  provenance attestations from suppliers (EV-008). The work is in progress under CAPA-004, SBOM
+  ingestion is not yet automated and the review is overdue; signed OTA firmware and pinned base
+  images reduce tampering risk in the interim.
+last_review: 2026-01-20
+next_review: 2026-05-20
+audit_status: draft
+tags: ["supply-chain", "sbom"]

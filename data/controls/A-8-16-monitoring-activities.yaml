@@ -1,0 +1,33 @@
+# Control A.8.16 — Monitoring activities.
+id: "A.8.16"
+title: "Monitoring activities"
+theme: technological
+category: "Logging and monitoring"
+objective: >-
+  Monitor networks, systems and applications for anomalous behaviour and take action to evaluate
+  potential information security incidents.
+owner:
+  name: "Tomas Horak"
+  role: "Security Engineer"
+  email: "tomas.horak@paketport.example"
+status: in_progress
+maturity: 2
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Continuous monitoring of the fleet and backend is needed to detect anomalous behaviour and
+  attacks early.
+policy_refs: []
+evidence_refs: ["EV-002"]
+risk_refs: ["R-002", "R-008"]
+nis2_areas: [incident_handling]
+implementation_notes: >-
+  Backend and network telemetry feed dashboards and a growing set of detections — authentication
+  anomalies, tamper alerts and egress spikes — with coverage evidenced by EV-002. Detection content
+  and alerting on privileged-command misuse are being expanded alongside the centralised-logging
+  initiative (INIT-001), so end-to-end monitoring of the locker fleet is not yet complete; alerts
+  route into incident triage and relate to R-002 and R-008.
+last_review: 2026-04-15
+next_review: 2026-10-15
+audit_status: reviewed
+tags: ["monitoring", "detection"]

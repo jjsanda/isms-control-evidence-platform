@@ -1,0 +1,28 @@
+# Risk — firmware tampering on street-sited lockers.
+id: "R-001"
+title: "Firmware tampering on street-sited lockers"
+description: >-
+  An attacker with physical access to a street-sited locker attempts to extract, modify or replace
+  the edge device's firmware or storage in order to take control of the device, harvest parcels or
+  personal data, or pivot into the backend.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+asset: "Locker edge device"
+threat: "Physical tampering and malicious firmware modification of exposed edge devices"
+vulnerability: "Physically accessible devices exposed to unsigned firmware or weak enclosure protection"
+inherent_likelihood: 4
+inherent_impact: 5
+treatment: mitigate
+mitigation: >-
+  Ruggedised, tamper-resistant enclosures with door and enclosure sensors (A.7.1, A.7.4); secure
+  boot and signed over-the-air firmware images so unsigned code will not run; encrypted storage and
+  mutually authenticated device-to-backend TLS (A.8.24). Tamper alerts are triaged and correlated
+  with maintenance schedules.
+control_refs: ["A.7.1", "A.7.4", "A.8.24"]
+residual_likelihood: 2
+residual_impact: 4
+target_date: 2026-11-30
+review_date: 2027-02-01
+acceptance: pending

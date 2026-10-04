@@ -1,0 +1,27 @@
+# Risk — insufficient logging hampers forensic investigation.
+id: "R-008"
+title: "Insufficient logging hampers forensic investigation"
+description: >-
+  Insufficient or non-centralised logging prevents timely detection and hampers forensic
+  investigation and NIS2 reporting after an incident, because relevant records were never captured
+  or were lost with a tampered locker.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+asset: "Audit logs"
+threat: "Attacker activity that cannot be reconstructed after the fact"
+vulnerability: "Logs held locally on lockers and lost on tamper; incomplete central retention"
+inherent_likelihood: 3
+inherent_impact: 4
+treatment: mitigate
+mitigation: >-
+  Defined auditd and journald baselines (A.8.15) and expanding monitoring (A.8.16), with the
+  centralised, tamper-evident log store and 90-day retention delivered by initiative INIT-001 and
+  action CAPA-002 so that a device ships its evidence before it can be tampered with.
+control_refs: ["A.8.15", "A.8.16"]
+residual_likelihood: 2
+residual_impact: 3
+target_date: 2026-09-30
+review_date: 2026-12-15
+acceptance: pending

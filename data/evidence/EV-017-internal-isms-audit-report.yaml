@@ -1,0 +1,18 @@
+# Evidence — internal ISMS audit report.
+id: "EV-017"
+title: "Internal ISMS audit report"
+type: test_record
+control_refs: ["A.5.35"]
+collected_on: 2026-02-01
+collected_by:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+artifact_path: "evidence/artifacts/internal-audit-report.md"
+valid_from: 2026-02-01
+valid_until: 2027-02-01
+source: "manual"
+audit_status: accepted
+notes: >-
+  Report of the latest independent internal ISMS audit, with findings and their routing into the
+  improvement (CAPA) backlog ahead of external certification.

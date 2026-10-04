@@ -1,0 +1,30 @@
+# PaketPort Systems - sample backup job register consumed by the backup_restore collector.
+# One job has an overdue restore test and one is unencrypted, on purpose.
+jobs:
+  - name: backend-postgres
+    system: Backend database (PostgreSQL)
+    schedule: hourly WAL archiving + nightly base backup
+    last_backup: 2026-07-06
+    last_restore_test: 2026-05-20
+    rpo_hours: 1
+    rto_hours: 4
+    encrypted: true
+    integrity_verified: true
+  - name: locker-config
+    system: Locker device configuration store
+    schedule: daily
+    last_backup: 2026-07-06
+    last_restore_test: 2026-02-10
+    rpo_hours: 24
+    rto_hours: 8
+    encrypted: true
+    integrity_verified: false
+  - name: object-store
+    system: Parcel-event object storage
+    schedule: continuous cross-region replication
+    last_backup: 2026-07-07
+    last_restore_test: 2026-06-15
+    rpo_hours: 1
+    rto_hours: 2
+    encrypted: false
+    integrity_verified: true

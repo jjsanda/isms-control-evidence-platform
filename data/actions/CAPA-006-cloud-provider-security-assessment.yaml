@@ -1,0 +1,22 @@
+# Improvement action — pre-go-live security assessment of the new cloud provider (verified/closed).
+id: "CAPA-006"
+title: "Complete the security assessment of the new cloud provider"
+source: internal_audit
+description: >-
+  Before migrating backend workloads to the new cloud provider, complete a supplier security
+  assessment against POL-SUP: review the provider's certifications and the shared-responsibility
+  split, agree the data-processing and breach-notification terms, and document the tenant hardening
+  baseline.
+owner:
+  name: "Jan Fischer"
+  role: "Head of Procurement"
+  email: "jan.fischer@paketport.example"
+status: verified
+opened_on: 2026-01-10
+due_date: 2026-02-28
+closed_on: 2026-02-20
+control_refs: ["A.5.23"]
+risk_refs: ["R-006"]
+verification: >-
+  Assessment completed and the cloud tenant hardening baseline (EV-009) filed; the residual supplier
+  risk was accepted and the action was confirmed effective at the February 2026 management review.

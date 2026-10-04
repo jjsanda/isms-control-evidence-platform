@@ -1,0 +1,18 @@
+# Improvement action — remediate high-severity SSH findings on the locker fleet.
+id: "CAPA-003"
+title: "Remediate two high-severity SSH findings on locker fleet"
+source: evidence_review
+description: >-
+  Review of the sshd hardening check (EV-001) identified two high-severity deviations from the SSH
+  baseline on part of the locker fleet. Remediate both by enforcing the hardened sshd baseline
+  (key-only authentication, disabled root login, approved ciphers) across all affected devices and
+  re-run the collector to confirm closure.
+owner:
+  name: "Sara Berger"
+  role: "IT Operations Lead"
+  email: "sara.berger@paketport.example"
+status: open
+opened_on: 2026-06-02
+due_date: 2026-07-15
+control_refs: ["A.8.9"]
+risk_refs: ["R-007"]

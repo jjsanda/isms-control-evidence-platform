@@ -1,0 +1,27 @@
+# Risk — unauthorised access via weak authentication or stale accounts.
+id: "R-004"
+title: "Unauthorised access via weak authentication or stale accounts"
+description: >-
+  An external or internal actor gains unauthorised access to the backend or administrative
+  interfaces through weak or reused authentication, or through stale, over-provisioned accounts
+  that were never revoked.
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+asset: "Backend & admin access"
+threat: "Credential compromise, brute force or exploitation of dormant accounts"
+vulnerability: "Incomplete MFA coverage on some admin paths and reliance on periodic access reviews"
+inherent_likelihood: 4
+inherent_impact: 4
+treatment: mitigate
+mitigation: >-
+  Least-privilege, role-based access on a need-to-know basis (A.5.15); minimised, MFA-protected
+  privileged access with just-in-time elevation (A.8.2); enforced and expanding MFA and strong
+  authentication (A.8.5); and quarterly joiner-mover-leaver access reviews.
+control_refs: ["A.5.15", "A.8.2", "A.8.5"]
+residual_likelihood: 2
+residual_impact: 3
+target_date: 2026-08-31
+review_date: 2026-12-20
+acceptance: pending

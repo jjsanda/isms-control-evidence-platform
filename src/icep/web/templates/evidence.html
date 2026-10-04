@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Evidence{% endblock %}
+{% block content %}
+<h1>Evidence library</h1>
+<p class="subtitle">{{ evidence | length }} artifacts backing the controls. Each SHA-256 anchors the
+artifact to the audit manifest, so tampering or drift is detectable.</p>
+
+<div class="filterbar">
+  <input id="filter" placeholder="Filter by id, title, type, control&hellip;" data-filter="#evidence-table">
+  <span class="count-note"><span id="filter-count">{{ evidence | length }}</span> of {{ evidence | length }} shown</span>
+</div>
+
+<div class="table-wrap card" style="padding:0;">
+<table class="data" id="evidence-table">
+  <thead><tr><th>ID</th><th>Title</th><th>Type</th><th>Controls</th><th>Collected</th><th>Valid until</th><th>Status</th><th>SHA-256</th></tr></thead>
+  <tbody>
+  {% for e in evidence %}
+    <tr>
+      <td><a href="/evidence/{{ e.id }}">{{ e.id }}</a></td>
+      <td>{{ e.title }}</td>
+      <td>{{ label(e.type) }}</td>
+      <td>{% for cid in e.control_refs %}<a href="/controls/{{ cid }}">{{ cid }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</td>
+      <td>{{ e.collected_on | dateiso }}</td>
+      <td>{{ e.valid_until | dateiso }}</td>
+      <td>
+        {% if e.is_expired(today) %}<span class="pill" style="color:#dc2626">expired</span>
+        {% elif review_state_of(e.valid_until, today, warn_days).value == 'due_soon' %}<span class="pill" style="color:#f59f00">expiring</span>
+        {% else %}<span class="pill" style="color:#059669">valid</span>{% endif %}
+      </td>
+      <td><code>{{ hashes.get(e.artifact_path, '')[:12] or '—' }}</code></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/filter.js"></script>{% endblock %}

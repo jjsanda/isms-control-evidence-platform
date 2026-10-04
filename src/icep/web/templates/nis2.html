@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}NIS2{% endblock %}
+{% block content %}
+<h1>NIS2 readiness</h1>
+<p class="subtitle">Mapping of NIS2 Directive (EU) 2022/2555 to the Annex A controls that implement it.
+Overall Art. 21(2) readiness: <strong>{{ metrics.nis2_overall_pct }}%</strong>.</p>
+
+<h2>Art. 21(2) &mdash; cybersecurity risk-management measures</h2>
+<div class="table-wrap card" style="padding:0;">
+<table class="data">
+  <thead><tr><th>Article</th><th>Measure</th><th>Controls</th><th style="min-width:150px;">Readiness</th></tr></thead>
+  <tbody>
+  {% for m in measures %}
+    <tr>
+      <td><strong>{{ m.article }}</strong></td>
+      <td>{{ m.title }}{% if m.measure %}<br><span class="muted">{{ m.measure.description }}</span>{% endif %}</td>
+      <td>{% if m.measure %}{% for cid in m.measure.control_refs %}<a href="/controls/{{ cid }}">{{ cid }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</td>
+      <td>
+        <div class="bar"><span style="width: {{ m.readiness }}%; background: {{ '#059669' if m.readiness >= 80 else '#f59f00' if m.readiness >= 50 else '#dc2626' }};"></span></div>
+        <span class="muted">{{ m.readiness }}%</span>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2>Art. 23 &mdash; incident reporting obligations</h2>
+<div class="table-wrap card" style="padding:0;">
+<table class="data">
+  <thead><tr><th>Phase</th><th>Deadline</th><th>Trigger</th><th>What is reported</th><th>Owner</th></tr></thead>
+  <tbody>
+  {% for r in reporting %}
+    <tr>
+      <td>{{ label(r.phase) }}</td>
+      <td><span class="pill solid" style="background:#4f46e5;">{{ r.deadline_label }}</span></td>
+      <td>{{ r.trigger }}</td>
+      <td>{{ r.content }}</td>
+      <td>{{ r.owner.name }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

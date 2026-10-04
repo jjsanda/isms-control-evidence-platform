@@ -1,0 +1,32 @@
+# Control A.5.25 — Assessment and decision on information security events.
+id: "A.5.25"
+title: "Assessment and decision on information security events"
+theme: organizational
+category: "Incident management"
+objective: >-
+  Assess information security events consistently and decide whether they are to be categorised as
+  information security incidents.
+owner:
+  name: "Tomas Horak"
+  role: "Security Engineer"
+  email: "tomas.horak@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Events from lockers, cloud and monitoring are triaged against consistent criteria to identify
+  genuine incidents.
+policy_refs: ["POL-IR"]
+evidence_refs: ["EV-011"]
+risk_refs: []
+nis2_areas: [incident_handling]
+implementation_notes: >-
+  Security events from the monitoring pipeline, locker tamper alerts and staff reports are triaged
+  by the security engineer against documented severity criteria and recorded in a triage log
+  (EV-011). Each event is classified, deduplicated and either closed or promoted to an incident with
+  an owner, and the triage record feeds the NIS2 significance assessment.
+last_review: 2026-03-10
+next_review: 2027-03-10
+audit_status: accepted
+tags: ["triage", "incident-response"]

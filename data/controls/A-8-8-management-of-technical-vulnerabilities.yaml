@@ -1,0 +1,33 @@
+# Control A.8.8 — Management of technical vulnerabilities.
+id: "A.8.8"
+title: "Management of technical vulnerabilities"
+theme: technological
+category: "Threat and vulnerability management"
+objective: >-
+  Obtain information about technical vulnerabilities, evaluate exposure and take appropriate
+  measures to address the associated risk.
+owner:
+  name: "Tomas Horak"
+  role: "Security Engineer"
+  email: "tomas.horak@paketport.example"
+status: operating
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Vulnerabilities in the Linux lockers, cloud stack and third-party dependencies are tracked and
+  remediated to defined SLAs.
+policy_refs: ["POL-VULN"]
+evidence_refs: ["EV-003"]
+risk_refs: ["R-007", "R-009"]
+nis2_areas: [acq_dev_maintenance]
+implementation_notes: >-
+  Container images and the locker OS are scanned in CI and continuously in the registry and at
+  runtime; findings are triaged by severity with remediation SLAs (critical seven days, high
+  thirty). A recent scan summary (EV-003) drives the backlog and patching of the locker fleet rides
+  the signed-OTA channel, with handling governed by POL-VULN and prioritised using threat
+  intelligence.
+last_review: 2026-03-20
+next_review: 2027-03-20
+audit_status: accepted
+tags: ["vulnerability", "patching"]

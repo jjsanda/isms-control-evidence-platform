@@ -1,0 +1,18 @@
+# Improvement action — complete centralised Linux audit-logging rollout.
+id: "CAPA-002"
+title: "Complete centralised Linux audit-logging rollout"
+source: risk_assessment
+description: >-
+  The risk assessment flagged that auditd/journald logs largely remain local to each locker and
+  are lost on tamper. Complete the centralised, tamper-evident log store from initiative INIT-001:
+  stand up the collector with 90-day retention, roll the forwarding agent out to the full fleet and
+  author privileged-command detection and alerting.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+status: in_progress
+opened_on: 2026-04-20
+due_date: 2026-09-30
+control_refs: ["A.8.15", "A.8.16"]
+risk_refs: ["R-008"]

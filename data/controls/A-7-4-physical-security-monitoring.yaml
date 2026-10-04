@@ -1,0 +1,31 @@
+# Control A.7.4 — Physical security monitoring.
+id: "A.7.4"
+title: "Physical security monitoring"
+theme: physical
+category: "Physical security"
+objective: >-
+  Continuously monitor premises and assets for unauthorised physical access and tampering.
+owner:
+  name: "Karl Mayer"
+  role: "Facilities & Physical Security Lead"
+  email: "karl.mayer@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Street-sited lockers and premises are monitored to detect intrusion and tampering.
+policy_refs: []
+evidence_refs: ["EV-014"]
+risk_refs: ["R-001"]
+nis2_areas: []
+implementation_notes: >-
+  Lockers carry door and enclosure tamper sensors that raise events to the backend; an unexpected
+  opening of the service compartment generates an alert correlated with maintenance schedules, and
+  a tamper-detection monitoring export (EV-014) evidences coverage and alert handling. Offices use
+  CCTV and alarm monitoring, and alerts route into the same security triage process as logical
+  events.
+last_review: 2026-02-05
+next_review: 2027-02-05
+audit_status: accepted
+tags: ["physical", "monitoring", "tamper"]

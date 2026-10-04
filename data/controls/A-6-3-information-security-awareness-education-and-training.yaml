@@ -1,0 +1,33 @@
+# Control A.6.3 — Information security awareness, education and training.
+id: "A.6.3"
+title: "Information security awareness, education and training"
+theme: people
+category: "Awareness & training"
+objective: >-
+  Ensure personnel and relevant interested parties receive appropriate awareness, education and
+  training and regular updates relevant to their roles.
+owner:
+  name: "Petra Klein"
+  role: "HR Manager"
+  email: "petra.klein@paketport.example"
+status: operating
+maturity: 3
+applicable: true
+inclusion_reason: best_practice
+soa_justification: >-
+  Staff and field technicians must be trained to recognise phishing and to handle customer data
+  safely.
+policy_refs: ["POL-HR"]
+evidence_refs: ["EV-012"]
+risk_refs: ["R-005"]
+nis2_areas: [cyber_hygiene_training]
+implementation_notes: >-
+  All staff complete the PaketPort security-awareness module (TRN-001) at onboarding and annually,
+  covering phishing, MFA, device and locker security, personal-data handling and incident
+  reporting, gated by a pass-graded quiz. Completion is tracked (EV-012), with follow-up for the
+  small number who have not yet passed, and field technicians receive additional locker-tampering
+  guidance.
+last_review: 2026-03-15
+next_review: 2027-03-15
+audit_status: accepted
+tags: ["awareness", "training"]

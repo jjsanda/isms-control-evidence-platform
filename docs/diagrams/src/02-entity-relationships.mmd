@@ -1,0 +1,32 @@
+erDiagram
+    CATALOG ||--|| SOA : "assessed in"
+    SOA }o--|| CONTROL : "documented by"
+    CONTROL ||--o{ EVIDENCE : "backed by"
+    CONTROL ||--o{ RISK : "treats"
+    CONTROL ||--o{ POLICY : "governed by"
+    CONTROL }o--o{ NIS2_MEASURE : "supports"
+    RISK ||--o{ ACTION : "raises"
+    CONTROL ||--o{ ACTION : "improves"
+    INITIATIVE ||--o{ EVIDENCE : "produces"
+    NIS2_MEASURE ||--|| NIS2_REPORTING : "Art.23 timelines"
+
+    CONTROL {
+        string id "A.5.1 .. A.8.34"
+        enum status
+        enum audit_status
+        date next_review
+    }
+    RISK {
+        int inherent_LxI
+        int residual_LxI
+        enum treatment
+        enum acceptance
+    }
+    EVIDENCE {
+        enum type
+        string sha256
+        date valid_until
+    }
+    NIS2_MEASURE {
+        string article "21(2)(a..j)"
+    }

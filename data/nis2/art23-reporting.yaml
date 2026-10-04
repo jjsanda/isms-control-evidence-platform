@@ -1,0 +1,50 @@
+# NIS2 Directive (EU) 2022/2555 — Art. 23 incident-reporting phases and statutory deadlines,
+# as operated by PaketPort Systems GmbH under its incident response procedure (POL-IR).
+phases:
+  - phase: early_warning
+    deadline_label: "24 hours"
+    deadline_hours: 24
+    trigger: "becoming aware of a significant incident"
+    content: >-
+      An early warning to CERT.at / the competent authority indicating whether the incident is
+      suspected to be caused by unlawful or malicious acts or could have a cross-border impact.
+    owner:
+      name: "Alex Rossi"
+      role: "Information Security Officer / ISMS Manager"
+      email: "alex.rossi@paketport.example"
+    procedure_ref: "POL-IR"
+  - phase: notification
+    deadline_label: "72 hours"
+    deadline_hours: 72
+    trigger: "becoming aware of a significant incident (updating the early warning)"
+    content: >-
+      An incident notification providing an initial assessment of the incident, its severity and
+      impact and any indicators of compromise, updating and elaborating on the early warning.
+    owner:
+      name: "Alex Rossi"
+      role: "Information Security Officer / ISMS Manager"
+      email: "alex.rossi@paketport.example"
+    procedure_ref: "POL-IR"
+  - phase: progress_update
+    deadline_label: "on CSIRT request"
+    trigger: "a request from the CSIRT or competent authority"
+    content: >-
+      Status updates and any intermediate findings provided upon request of the CSIRT or the
+      competent authority while the incident is being handled.
+    owner:
+      name: "Alex Rossi"
+      role: "Information Security Officer / ISMS Manager"
+      email: "alex.rossi@paketport.example"
+    procedure_ref: "POL-IR"
+  - phase: final_report
+    deadline_label: "1 month"
+    deadline_hours: 720
+    trigger: "no later than one month after the incident notification"
+    content: >-
+      A final report with a detailed description of the incident, its root cause, its severity and
+      impact, the mitigation measures applied, and any cross-border impact.
+    owner:
+      name: "Alex Rossi"
+      role: "Information Security Officer / ISMS Manager"
+      email: "alex.rossi@paketport.example"
+    procedure_ref: "POL-IR"

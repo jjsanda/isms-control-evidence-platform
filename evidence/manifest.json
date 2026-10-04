@@ -1,0 +1,26 @@
+{
+  "artifact_count": 18,
+  "artifacts": {
+    "evidence/artifacts/access-review-record.md": "fb6d8d8d7ede5063892f48e5bc1bcc69e1662c32eb47ac68cf510c8d72ad4f58",
+    "evidence/artifacts/asset-inventory.md": "2586b57413fd7d1175fd65b1c5b0d672e0f040fde0fd7ea6cdc1dacb5c498922",
+    "evidence/artifacts/auditd-coverage-report.md": "929bac696a5bd5249e554f72e42788ca5c3b90cc63f3eb68a4f04ce79f563341",
+    "evidence/artifacts/backup-restore-record.md": "c3f973a8111c0b15ee2e065fb38868f67a6dc01fe7864951b8226c7dc008a99c",
+    "evidence/artifacts/cloud-baseline.md": "b4d72ad17a34a411b7100fa9471c8f2e2ec6875f67769858cc34fc7fd5629732",
+    "evidence/artifacts/incident-response-plan.md": "73ac26d2f351ff4748e5d2ab5fb698eaa82f5fd7d98ed656968e43586a46ab1a",
+    "evidence/artifacts/incident-triage-log.md": "91b2c1ed225e40107456cfe6805ba13f5e54c2511a9e40a1760c1a013a3c4bcd",
+    "evidence/artifacts/internal-audit-report.md": "68207cf0558d79a74f5bd58a213f422a7dc91f7c24c23d4862886b602eae3f37",
+    "evidence/artifacts/locker-enclosure-review.md": "f282ed6c6144480df7231bb49ef35bf6e7778b92f3ff0eb621e141c71029d213",
+    "evidence/artifacts/management-review-minutes.md": "f66667d1d241fe02dba2fd66487b80c4e6414584199054159562818c2e247872",
+    "evidence/artifacts/network-tls-config.md": "73ef2741ce5996cbf9cece6ff0cfe714542ad4d99b07779610541bbf5fefdc3f",
+    "evidence/artifacts/sbom-assessment.md": "4f3fd79c7a7c8de3d746e75d19a0142094954127c13d7d50ed8d64eff8b0b8a8",
+    "evidence/artifacts/ssh-hardening-report.md": "a909c40ab7c367f1fd8f01a77ecf33a992e7b55ae7621ca7f4ef8a3e2c012312",
+    "evidence/artifacts/supplier-register.md": "792c62e9e7fc2b5cbf8a45560538ee817a928d4c41159ef3eb0352f044d48aad",
+    "evidence/artifacts/tamper-monitoring.md": "eae33992721cdb32851ba35ffe52d4de510b51b8490a783203a22ba2b230219d",
+    "evidence/artifacts/threat-intel-brief.md": "782be7189f0b4d84e0312c98bdb93e9323dd468ec8c3d47667286f8f2069991f",
+    "evidence/artifacts/training-completion.md": "bfa7f18e289cdd40bce82647a72408d1d4e0b396dd71cd42795ed0df3b0085e5",
+    "evidence/artifacts/vuln-scan-summary.md": "18dce233a204ea3f040fb4f9b672b4427f916b2003f9f5bb8ca53eb07f0f5625"
+  },
+  "generated_at": "2026-07-07T00:00:00+00:00",
+  "tool": "icep",
+  "version": "0.1.0"
+}

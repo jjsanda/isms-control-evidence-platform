@@ -1,0 +1,32 @@
+# Control A.5.24 — Information security incident management planning and preparation.
+id: "A.5.24"
+title: "Information security incident management planning and preparation"
+theme: organizational
+category: "Incident management"
+objective: >-
+  Plan and prepare for managing information security incidents by defining roles, responsibilities,
+  processes and communication channels in advance.
+owner:
+  name: "Alex Rossi"
+  role: "Information Security Officer / ISMS Manager"
+  email: "alex.rossi@paketport.example"
+status: operating
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Given NIS2 duties and a 24/7 locker service, PaketPort maintains a prepared, tested
+  incident-management capability.
+policy_refs: ["POL-IR"]
+evidence_refs: ["EV-010"]
+risk_refs: ["R-002"]
+nis2_areas: [incident_handling]
+implementation_notes: >-
+  An approved incident response plan (EV-010, POL-IR) defines the severity model, on-call roles,
+  escalation to the Managing Director and DPO, and the NIS2 Art. 23 reporting workflow (24-hour
+  early warning, 72-hour notification and one-month final report to CERT.at). Contact details for
+  the CSIRT, the DSB and law enforcement are maintained, and tabletop exercises validate readiness.
+last_review: 2026-03-10
+next_review: 2027-03-10
+audit_status: accepted
+tags: ["incident-response", "nis2"]

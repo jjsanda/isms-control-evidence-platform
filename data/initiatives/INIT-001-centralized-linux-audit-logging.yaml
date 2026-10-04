@@ -1,0 +1,65 @@
+# Security initiative — centralised Linux audit logging (concept to pilot to rollout).
+id: "INIT-001"
+title: "Centralised Linux audit logging"
+status: piloting
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+concept: >-
+  Today, audit records on PaketPort's estate are scattered: auditd and journald run locally on
+  each Linux locker edge device and backend host, but their logs stay on the device. When a
+  street-sited locker is tampered with, taken offline or reimaged, its local logs are lost with
+  it — exactly the evidence needed to understand what happened. There is no single place to search
+  across the fleet, correlate events between edge and backend, or prove retention to an auditor,
+  and detections cannot see activity they never receive. This initiative stands up a central,
+  tamper-evident log pipeline: every locker and backend host forwards auditd and journald events
+  over a mutually authenticated TLS channel to a central collector with enforced, append-only
+  retention. The approach is to fix a reviewed auditd baseline ruleset, ship a lightweight
+  forwarding agent through the existing signed-OTA and configuration-as-code channels, buffer
+  locally and forward within minutes so a tampered device has already shipped its evidence,
+  retain events for 90 days in write-once storage, and layer detection and alerting on top. The
+  outcome directly strengthens incident detection (A.8.16), preserves forensic evidence for NIS2
+  Art. 23 reporting, and closes the logging gap tracked as risk R-008.
+objective: >-
+  Forward auditd and journald events from every locker edge device and backend host to a central,
+  tamper-evident store with 90-day retention, enabling fleet-wide detection, correlation and NIS2
+  incident forensics.
+control_refs: ["A.8.15", "A.8.16"]
+nis2_areas: [incident_handling]
+tasks:
+  - id: "T1"
+    title: "Define auditd baseline ruleset"
+    status: done
+    owner: "Tomas Horak"
+  - id: "T2"
+    title: "Deploy log-forwarding agent to pilot lockers"
+    status: done
+    owner: "Sara Berger"
+  - id: "T3"
+    title: "Stand up central collector with 90-day retention"
+    status: in_progress
+    owner: "Milan Novak"
+  - id: "T4"
+    title: "Author detection & alerting rules"
+    status: todo
+    owner: "Tomas Horak"
+  - id: "T5"
+    title: "Roll out to full locker fleet"
+    status: todo
+    owner: "Milan Novak"
+acceptance_criteria:
+  - id: "AC1"
+    text: "auditd baseline covers all required rule keys"
+    met: true
+    evidence_ref: "EV-002"
+  - id: "AC2"
+    text: "pilot lockers forward logs to the central store within 5 minutes"
+    met: true
+  - id: "AC3"
+    text: "logs retained tamper-evident for 90 days"
+    met: false
+  - id: "AC4"
+    text: "alerts fire on privileged-command misuse"
+    met: false
+evidence_refs: ["EV-002"]

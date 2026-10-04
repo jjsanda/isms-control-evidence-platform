@@ -1,0 +1,19 @@
+# Evidence — backup restore test record.
+id: "EV-004"
+title: "Backup restore test record"
+type: backup_test
+control_refs: ["A.8.13", "A.5.30"]
+collected_on: 2026-05-20
+collected_by:
+  name: "Sara Berger"
+  role: "IT Operations Lead"
+  email: "sara.berger@paketport.example"
+artifact_path: "evidence/artifacts/backup-restore-record.md"
+valid_from: 2026-05-20
+valid_until: 2026-11-20
+source: "collector:backup_restore"
+audit_status: accepted
+notes: >-
+  Record of a successful restore of the backend database into an isolated environment, with
+  timings measured against the four-hour RTO and one-hour RPO targets and the integrity checks
+  that were performed.

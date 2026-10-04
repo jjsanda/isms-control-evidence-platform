@@ -1,0 +1,33 @@
+# Control A.5.19 — Information security in supplier relationships.
+id: "A.5.19"
+title: "Information security in supplier relationships"
+theme: organizational
+category: "Supplier relationships"
+objective: >-
+  Define and agree information security requirements with suppliers to manage the risks associated
+  with their access to and handling of PaketPort's assets.
+owner:
+  name: "Jan Fischer"
+  role: "Head of Procurement"
+  email: "jan.fischer@paketport.example"
+status: implemented
+maturity: 3
+applicable: true
+inclusion_reason: contractual
+soa_justification: >-
+  Heavy reliance on carriers, the cloud provider and hardware vendors means supplier security must
+  be formally governed.
+policy_refs: ["POL-SUP"]
+evidence_refs: ["EV-007"]
+risk_refs: ["R-006"]
+nis2_areas: [supply_chain]
+implementation_notes: >-
+  A supplier security register (EV-007) records each vendor, the data and access they hold, their
+  assurance evidence (certifications, DPAs) and a risk rating, and security and PII clauses are
+  required in contracts under POL-SUP. Note that the scheduled supplier reviews fell overdue and are
+  being remediated under CAPA-006, so the register evidence is currently past its validity window —
+  a known, tracked gap reflected in the past next-review date.
+last_review: 2026-01-15
+next_review: 2026-06-01
+audit_status: accepted
+tags: ["supplier", "third-party"]

@@ -1,0 +1,33 @@
+# Control A.5.9 — Inventory of information and other associated assets.
+id: "A.5.9"
+title: "Inventory of information and other associated assets"
+theme: organizational
+category: "Asset management"
+objective: >-
+  Maintain an accurate inventory of information and associated assets, each with an assigned owner,
+  to underpin proportionate protection.
+owner:
+  name: "Sara Berger"
+  role: "IT Operations Lead"
+  email: "sara.berger@paketport.example"
+status: operating
+maturity: 3
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  A live inventory of every locker, cloud service and PII store is essential to protect a
+  geographically dispersed estate.
+policy_refs: []
+evidence_refs: ["EV-006"]
+risk_refs: ["R-013"]
+nis2_areas: [hr_access_asset]
+implementation_notes: >-
+  A CMDB records every locker edge device by serial, location, firmware version and network
+  address, together with each cloud service, data store and customer-PII repository, each with a
+  named owner and classification. The inventory is reconciled against the fleet-management plane and
+  cloud tags and exported monthly (EV-006), and onboarding a new locker or service is gated on a
+  CMDB entry.
+last_review: 2026-02-15
+next_review: 2027-02-15
+audit_status: accepted
+tags: ["asset-management", "cmdb"]

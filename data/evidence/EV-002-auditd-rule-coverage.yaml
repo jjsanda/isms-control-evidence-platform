@@ -1,0 +1,19 @@
+# Evidence — auditd rule coverage on edge and backend hosts.
+id: "EV-002"
+title: "auditd rule coverage (edge + backend)"
+type: config_export
+control_refs: ["A.8.15", "A.8.16"]
+collected_on: 2026-06-01
+collected_by:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+artifact_path: "evidence/artifacts/auditd-coverage-report.md"
+valid_from: 2026-06-01
+valid_until: 2026-12-01
+source: "collector:auditd_coverage"
+audit_status: reviewed
+notes: >-
+  Export of the deployed auditd and journald rulesets on representative edge and backend hosts,
+  mapped to the required rule keys. Confirms baseline coverage while central log forwarding is
+  still being rolled out under INIT-001.

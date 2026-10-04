@@ -1,0 +1,171 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "isms-control-evidence-platform"
+version = "0.1.0"
+description = "A compliance-as-code ISMS platform: an ISO 27001:2022 control register mapped to risks, evidence, and NIS2 readiness, with runnable Linux evidence collectors and a deterministic, hash-manifested audit pack."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Josef Šanda", email = "pepek.svanda@gmail.com" }]
+keywords = [
+    "isms",
+    "iso27001",
+    "iso-27001-2022",
+    "nis2",
+    "grc",
+    "compliance",
+    "information-security",
+    "risk-management",
+    "audit",
+    "statement-of-applicability",
+    "evidence",
+    "security",
+]
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Information Technology",
+    "Framework :: FastAPI",
+    "Topic :: Security",
+    "Topic :: Office/Business",
+    "Typing :: Typed",
+]
+
+# Core runtime deps are kept deliberately light so the *offline-deterministic* default stack
+# (hand-authored YAML register + local collectors) installs and runs with **no API key and no
+# network**. PDF rendering (WeasyPrint) and screenshot capture (Playwright) live behind extras.
+dependencies = [
+    "pydantic>=2.8",
+    "pydantic-settings>=2.4",
+    "pyyaml>=6.0.1",
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "jinja2>=3.1",
+    "rich>=13.7",
+    "typing-extensions>=4.12",
+]
+
+[project.optional-dependencies]
+# HTML/CSS -> PDF for the audit pack and README (native pango/cairo/harfbuzz already on the host).
+pdf = ["weasyprint>=62", "markdown>=3.6"]
+# Optional tooling used only to capture the dashboard screenshots for the README.
+media = ["playwright>=1.45"]
+
+[project.scripts]
+icep = "icep.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/jjsanda/isms-control-evidence-platform"
+Repository = "https://github.com/jjsanda/isms-control-evidence-platform"
+Issues = "https://github.com/jjsanda/isms-control-evidence-platform/issues"
+
+# uv dependency group (PEP 735) for dev/test tooling, not shipped with the package.
+[dependency-groups]
+dev = [
+    "pytest>=8.2",
+    "pytest-cov>=5.0",
+    "httpx>=0.27",
+    "ruff>=0.6",
+    "black>=24.8",
+    "mypy>=1.11",
+    "pre-commit>=3.8",
+    "pip-audit>=2.7",
+    "types-PyYAML",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/icep"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/icep", "data", "README.md", "LICENSE", "NOTICE"]
+
+# --------------------------------------------------------------------------------------
+# Tooling configuration
+# --------------------------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",    # pycodestyle
+    "F",         # pyflakes
+    "I",         # isort
+    "N",         # pep8-naming
+    "UP",        # pyupgrade
+    "B",         # flake8-bugbear
+    "C4",        # comprehensions
+    "SIM",       # simplify
+    "TID",       # tidy-imports
+    "PTH",       # use-pathlib
+    "RUF",       # ruff-specific
+]
+ignore = [
+    "E501",    # line length handled by black
+    "B008",    # FastAPI dependency-injection uses callables in argument defaults
+    "RUF022",  # keep __all__ grouped by category (curated) rather than alphabetised
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["N802", "N803", "S101"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["icep"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+plugins = ["pydantic.mypy"]
+mypy_path = "src"
+explicit_package_bases = true
+namespace_packages = true
+files = ["src", "tests"]
+
+# Third-party libraries that ship no (or incomplete) type information.
+[[tool.mypy.overrides]]
+module = [
+    "weasyprint.*",
+    "markdown.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-q --strict-markers"
+testpaths = ["tests"]
+markers = [
+    "unit: fast, isolated unit tests (no I/O beyond tmp_path)",
+    "integrity: schema, referential-integrity and catalog-completeness checks over data/",
+    "collectors: evidence-collector tests over the committed sample fixtures",
+    "web: FastAPI dashboard route tests via TestClient",
+    "export: audit-pack assembly and determinism tests",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["icep"]
+omit = ["*/__main__.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+    "\\.\\.\\.",
+    "if __name__ == .__main__.:",
+]

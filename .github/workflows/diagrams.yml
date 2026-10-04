@@ -1,0 +1,29 @@
+name: Diagrams
+
+# Non-blocking render check: whenever a Mermaid source changes, re-render the diagrams and upload
+# them as an artifact. Runs separately from the main gate because it needs Node + a Chromium
+# download; the committed PNGs are what the README relies on.
+on:
+  pull_request:
+    paths: ["docs/diagrams/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    name: Render Mermaid diagrams
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Render diagrams
+        run: ./scripts/render_diagrams.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rendered-diagrams
+          path: docs/diagrams/rendered/
+          if-no-files-found: error

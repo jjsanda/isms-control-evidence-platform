@@ -1,0 +1,18 @@
+# Evidence — asset inventory export from the CMDB.
+id: "EV-006"
+title: "Asset inventory export (CMDB)"
+type: config_export
+control_refs: ["A.5.9"]
+collected_on: 2026-05-01
+collected_by:
+  name: "Sara Berger"
+  role: "IT Operations Lead"
+  email: "sara.berger@paketport.example"
+artifact_path: "evidence/artifacts/asset-inventory.md"
+valid_from: 2026-05-01
+valid_until: 2027-05-01
+source: "manual"
+audit_status: accepted
+notes: >-
+  Point-in-time export of the CMDB listing every locker edge device, cloud service and
+  personal-data store with its assigned owner and information classification.

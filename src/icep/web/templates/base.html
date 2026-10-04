@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Overview{% endblock %} · {{ org.name }} ISMS</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">&#128737;</span> ISMS <span class="brand-sub">Control &amp; Evidence</span></a>
+  <div class="org">{{ org.name }} &middot; {{ org.certification_target }}</div>
+</header>
+<nav class="mainnav">
+  {% for path, name in nav %}
+    {% set active = request.url.path == path or (path != '/' and request.url.path.startswith(path)) %}
+    <a href="{{ path }}"{% if active %} class="active"{% endif %}>{{ name }}</a>
+  {% endfor %}
+</nav>
+<main class="content">
+  {% block content %}{% endblock %}
+</main>
+<footer class="foot">
+  Report date {{ today | dateiso }} &middot; <code>icep {{ version }}</code> &middot;
+  Fictional demo data for a portfolio project &mdash; no confidential information.
+</footer>
+{% block scripts %}{% endblock %}
+</body>
+</html>

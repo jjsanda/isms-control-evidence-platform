@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}{{ control.id }}{% endblock %}
+{% block content %}
+{% set eff = effective_audit_of(control.audit_status, control.next_review, today) %}
+{% set rev = review_state_of(control.next_review, today, warn_days) %}
+<div class="crumb"><a href="/controls">Controls</a> / {{ control.id }}</div>
+<h1>{{ control.id }} &middot; {{ control.title }}</h1>
+<p class="subtitle">{{ label(control.theme) }} &middot; {{ control.category }}</p>
+
+<div class="detail-grid">
+  <div class="card">
+    <h2>Objective</h2>
+    <p class="prose">{{ control.objective }}</p>
+    <h2>Implementation at {{ org.name }}</h2>
+    <p class="prose">{{ control.implementation_notes }}</p>
+    <h2>Statement of Applicability</h2>
+    {% if soa %}
+    <p class="prose"><strong>{{ 'Applicable' if soa.applicable else 'Excluded' }}</strong>
+      ({{ label(soa.inclusion_reason) }}) &mdash; {{ soa.justification }}</p>
+    {% endif %}
+
+    {% if evidence %}
+    <h2>Evidence ({{ evidence | length }})</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>ID</th><th>Title</th><th>Type</th><th>Valid until</th><th>SHA-256</th></tr></thead>
+      <tbody>
+      {% for e in evidence %}
+      <tr>
+        <td><a href="/evidence/{{ e.id }}">{{ e.id }}</a></td>
+        <td>{{ e.title }}</td>
+        <td>{{ label(e.type) }}</td>
+        <td>{{ e.valid_until | dateiso }}{% if e.is_expired(today) %} <span class="pill" style="color:#dc2626">expired</span>{% endif %}</td>
+        <td><code>{{ hashes.get(e.artifact_path, '')[:12] or '—' }}</code></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table></div>
+    {% endif %}
+
+    {% if risks %}
+    <h2>Risks treated ({{ risks | length }})</h2>
+    <ul class="clean">
+      {% for r in risks %}
+      <li><a href="/risks/{{ r.id }}">{{ r.id }}</a> {{ r.title }}
+        <span class="pill" style="color: {{ band_color(r.residual_band) }}; float:right;">{{ label(r.residual_band) }} {{ r.residual_score }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if actions %}
+    <h2>Improvement actions ({{ actions | length }})</h2>
+    <ul class="clean">
+      {% for a in actions %}
+      <li>{{ a.id }} &middot; {{ a.title }} <span class="tag">{{ label(a.status) }}</span> <span class="muted">due {{ a.due_date | dateiso }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  <aside class="card">
+    <h2>At a glance</h2>
+    <dl class="facts">
+      <dt>Owner</dt><dd>{{ control.owner.name }}<br><span class="muted">{{ control.owner.role }}</span></dd>
+      <dt>Status</dt><dd><span class="pill" style="color: {{ status_color(control.status) }}">{{ label(control.status) }}</span></dd>
+      <dt>Maturity</dt><dd>{{ control.maturity }} / 5</dd>
+      <dt>Audit status</dt><dd><span class="pill" style="color: {{ audit_color(eff) }}">{{ label(eff) }}</span>
+        {% if eff.value != control.audit_status.value %}<br><span class="muted">stored: {{ label(control.audit_status) }}</span>{% endif %}</dd>
+      <dt>Last review</dt><dd>{{ control.last_review | dateiso }}</dd>
+      <dt>Next review</dt><dd>{{ control.next_review | dateiso }}
+        {% if rev.value != 'current' %}<span class="pill" style="color: {{ review_color(rev) }}">{{ label(rev) }}</span>{% endif %}</dd>
+      <dt>Policies</dt><dd>{{ control.policy_refs | join(', ') if control.policy_refs else '—' }}</dd>
+      <dt>NIS2</dt><dd>{% for a in control.nis2_areas %}<span class="tag">{{ label(a) }}</span> {% else %}&mdash;{% endfor %}</dd>
+      <dt>Tags</dt><dd>{% for t in control.tags %}<span class="tag">{{ t }}</span> {% else %}&mdash;{% endfor %}</dd>
+    </dl>
+  </aside>
+</div>
+{% endblock %}

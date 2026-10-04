@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Awareness{% endblock %}
+{% block content %}
+<h1>{{ training.title if training else 'Awareness training' }}</h1>
+{% if training %}
+<p class="subtitle">Audience: {{ training.audience }} &middot; Version {{ training.version }}</p>
+
+<div class="detail-grid">
+  <div class="card prose">
+    {{ training.body_markdown | md }}
+
+    {% if quiz %}
+    <h2>Knowledge check</h2>
+    <p class="muted">Answer all questions, then check. Pass mark: {{ (quiz.pass_threshold * 100) | round | int }}%.</p>
+    <form id="quiz" data-threshold="{{ quiz.pass_threshold }}">
+      {% for q in quiz.questions %}
+      <fieldset class="qz" data-correct="{{ q.correct_index }}" data-explain="{{ q.explanation }}"
+                style="border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:10px 0;">
+        <legend><strong>{{ loop.index }}.</strong> {{ q.prompt }}</legend>
+        {% for opt in q.options %}
+        <label style="display:block; padding:3px 0;"><input type="radio" name="{{ q.id }}" value="{{ loop.index0 }}"> {{ opt }}</label>
+        {% endfor %}
+        <p class="qz-feedback" hidden style="margin:6px 0 0;"></p>
+      </fieldset>
+      {% endfor %}
+      <button type="button" id="quiz-submit" style="padding:8px 16px; background:var(--indigo); color:#fff; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Check answers</button>
+      <div id="quiz-result" hidden style="margin-top:12px; font-weight:600;"></div>
+    </form>
+    {% endif %}
+  </div>
+
+  <aside class="card">
+    <h2>Learning objectives</h2>
+    <ul class="clean">{% for o in training.learning_objectives %}<li>{{ o }}</li>{% endfor %}</ul>
+    <h2>NIS2</h2>
+    <div>{% for a in training.nis2_areas %}<span class="tag">{{ label(a) }}</span> {% endfor %}</div>
+    <h2>Completions ({{ metrics.training_pass_pct }}% pass)</h2>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th>Person</th><th>Date</th><th class="right">Score</th><th></th></tr></thead>
+      <tbody>
+      {% for c in completions %}
+      <tr>
+        <td>{{ c.person.name }}<br><span class="muted">{{ c.person.role }}</span></td>
+        <td>{{ c.completed_on | dateiso }}</td>
+        <td class="num-cell">{{ (c.score * 100) | round | int }}%</td>
+        <td>{% if c.passed %}<span class="status-pass">pass</span>{% else %}<span class="status-fail">fail</span>{% endif %}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table></div>
+  </aside>
+</div>
+{% endif %}
+{% endblock %}
+{% block scripts %}<script src="/static/quiz.js"></script>{% endblock %}

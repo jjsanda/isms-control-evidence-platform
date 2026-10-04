@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+<h1>ISMS overview</h1>
+<p class="subtitle">Information Security Management System posture for {{ org.name }} as of {{ today | dateiso }}.</p>
+
+<div class="kpis">
+  <div class="kpi">
+    <div class="num">{{ metrics.documented_total }}/{{ metrics.catalog_total }}</div>
+    <div class="lbl">Controls documented</div>
+    <div class="sub">{{ metrics.soa_applicable }} applicable in the SoA</div>
+  </div>
+  <div class="kpi">
+    <div class="num">{{ metrics.implementation_pct }}%</div>
+    <div class="lbl">Implemented</div>
+    <div class="sub">{{ metrics.implemented_controls }}/{{ metrics.documented_total }} operating or implemented</div>
+  </div>
+  <div class="kpi">
+    <div class="num">{{ metrics.nis2_overall_pct }}%</div>
+    <div class="lbl">NIS2 readiness</div>
+    <div class="sub">Art. 21(2) &amp; Art. 20</div>
+  </div>
+  <div class="kpi">
+    <div class="num">{{ metrics.training_pass_pct }}%</div>
+    <div class="lbl">Awareness pass rate</div>
+    <div class="sub">{{ metrics.training_passed }}/{{ metrics.training_completions }} staff</div>
+  </div>
+  <div class="kpi {{ 'bad' if metrics.risks_high_or_critical_open else '' }}">
+    <div class="num">{{ metrics.risks_high_or_critical_open }}</div>
+    <div class="lbl">Residual high/critical</div>
+    <div class="sub">{{ metrics.risk_total }} risks &middot; {{ metrics.risks_accepted }} accepted</div>
+  </div>
+  <div class="kpi {{ 'warn' if metrics.action_overdue else '' }}">
+    <div class="num">{{ metrics.action_open }}</div>
+    <div class="lbl">Open actions</div>
+    <div class="sub">{{ metrics.action_overdue }} overdue</div>
+  </div>
+  <div class="kpi {{ 'bad' if metrics.overdue_controls else '' }}">
+    <div class="num">{{ metrics.overdue_controls | length }}</div>
+    <div class="lbl">Overdue reviews</div>
+    <div class="sub">{{ metrics.due_soon_controls | length }} due soon</div>
+  </div>
+  <div class="kpi {{ 'warn' if metrics.evidence_expired else '' }}">
+    <div class="num">{{ metrics.evidence_expired }}</div>
+    <div class="lbl">Expired evidence</div>
+    <div class="sub">{{ metrics.evidence_expiring }} expiring soon</div>
+  </div>
+</div>
+
+<div class="grid charts">
+  <div class="card">
+    <h2>Control implementation status</h2>
+    <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap;">
+      {{ status_donut | safe }}
+      <ul class="legend" style="flex-direction:column;">
+        {% for status, count in metrics.status_counts.items() if count > 0 %}
+        <li><span class="dot" style="background: {{ status_color(status) }}"></span>{{ label(status) }} <strong>&nbsp;{{ count }}</strong></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h2>NIS2 readiness by measure</h2>
+    {{ nis2_bars | safe }}
+    <p class="count-note">Percentage of the Annex A controls mapped to each Art. 21(2) measure that are implemented or operating.</p>
+  </div>
+</div>
+
+<div class="grid charts" style="margin-top:16px;">
+  <div class="card">
+    <h2>Residual risk heatmap</h2>
+    <div style="text-align:center;">{{ heatmap | safe }}</div>
+    <p class="count-note">Each risk placed by residual likelihood &times; impact. Numbers show how many risks sit in a cell.</p>
+  </div>
+  <div class="card">
+    <h2>Needs attention</h2>
+    {% if overdue %}
+      <h3 style="font-size:14px;margin:6px 0;">Controls overdue for review</h3>
+      <ul class="clean">
+        {% for c in overdue %}
+        <li><a href="/controls/{{ c.id }}">{{ c.id }}</a> {{ c.title }} <span class="muted">&middot; {{ c.next_review | dateiso }}</span></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <h3 style="font-size:14px;margin:12px 0 6px;">Highest residual risks</h3>
+    <ul class="clean">
+      {% for r in top_risks %}
+      <li>
+        <a href="/risks/{{ r.id }}">{{ r.id }}</a> {{ r.title }}
+        <span class="pill" style="color: {{ band_color(r.residual_band) }}; float:right;">{{ label(r.residual_band) }} {{ r.residual_score }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

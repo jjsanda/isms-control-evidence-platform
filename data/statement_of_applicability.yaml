@@ -1,0 +1,374 @@
+# Statement of Applicability — PaketPort Systems GmbH (all 93 Annex A:2022 controls).
+entries:
+  - control_id: "A.5.1"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Top-level security policy sets PaketPort's direction and is required by ISO 27001 clause 5.2."
+  - control_id: "A.5.2"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Clear security roles across locker ops, cloud and admin staff prevent accountability gaps."
+  - control_id: "A.5.3"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Separating duties like firmware deploy from approval limits fraud and error in a small team."
+  - control_id: "A.5.4"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Management actively requires staff to apply security controls for lockers and the backend."
+  - control_id: "A.5.5"
+    applicable: true
+    inclusion_reason: legal
+    justification: "As a NIS2 operator PaketPort must reach CERT.at, the DSB and police fast during incidents."
+  - control_id: "A.5.6"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Membership in security forums keeps PaketPort current on threats to lockers and logistics IT."
+  - control_id: "A.5.7"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Internet-facing lockers are constantly scanned, so threat intel guides defence of edge and APIs."
+  - control_id: "A.5.8"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "New locker rollouts and app features carry security requirements from design to go-live."
+  - control_id: "A.5.9"
+    applicable: true
+    inclusion_reason: risk
+    justification: "A live inventory of every locker, cloud service and PII store is vital for a dispersed estate."
+  - control_id: "A.5.10"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Staff and contractors get clear rules for using PaketPort systems, data and locker tooling."
+  - control_id: "A.5.11"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Leavers and field technicians must return laptops, locker keys and maintenance devices."
+  - control_id: "A.5.12"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Classifying customer PII, parcel events and carrier keys drives proportionate protection."
+  - control_id: "A.5.13"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Consistent labels let staff handle classified customer and operational data correctly."
+  - control_id: "A.5.14"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Parcel events and addresses moving between lockers, cloud and carriers must be encrypted."
+  - control_id: "A.5.15"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Access to the backend, locker management plane and PII is restricted on need-to-know."
+  - control_id: "A.5.16"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Every user, technician and service identity across lockers and cloud is uniquely managed."
+  - control_id: "A.5.17"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Passwords, keys and tokens for locker and cloud access are issued and stored securely."
+  - control_id: "A.5.18"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Access rights are granted and revoked as staff and carrier partners join, move or leave."
+  - control_id: "A.5.19"
+    applicable: true
+    inclusion_reason: contractual
+    justification: "Reliance on carriers, cloud and hardware vendors means supplier security must be governed."
+  - control_id: "A.5.20"
+    applicable: true
+    inclusion_reason: contractual
+    justification: "Contracts with carriers and the cloud provider set explicit security and PII obligations."
+  - control_id: "A.5.21"
+    applicable: true
+    inclusion_reason: contractual
+    justification: "Locker firmware and cloud components arrive via a supply chain assessed for tampering."
+  - control_id: "A.5.22"
+    applicable: true
+    inclusion_reason: contractual
+    justification: "Carrier API and cloud service changes are reviewed so they don't weaken PaketPort's posture."
+  - control_id: "A.5.23"
+    applicable: true
+    inclusion_reason: contractual
+    justification: "Routing and the app backend run in the cloud, so cloud security duties are defined and monitored."
+  - control_id: "A.5.24"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Given NIS2 duties and 24/7 lockers, PaketPort keeps a prepared incident-management process."
+  - control_id: "A.5.25"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Events from lockers, cloud and monitoring are triaged consistently to identify real incidents."
+  - control_id: "A.5.26"
+    applicable: true
+    inclusion_reason: risk
+    justification: "A defined response limits impact when a locker or backend service is compromised."
+  - control_id: "A.5.27"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Post-incident lessons feed back to harden lockers and the cloud against recurrence."
+  - control_id: "A.5.28"
+    applicable: true
+    inclusion_reason: legal
+    justification: "Evidence is collected soundly to support NIS2 reporting and prosecution after tampering."
+  - control_id: "A.5.29"
+    applicable: true
+    inclusion_reason: business
+    justification: "Security must hold during outages so parcel handover and customer data stay protected."
+  - control_id: "A.5.30"
+    applicable: true
+    inclusion_reason: business
+    justification: "Customers rely on 24/7 lockers, so ICT continuity for backend and devices is planned and tested."
+  - control_id: "A.5.31"
+    applicable: true
+    inclusion_reason: legal
+    justification: "PaketPort must identify GDPR, NIS2 and Austrian legal obligations binding its data and services."
+  - control_id: "A.5.32"
+    applicable: true
+    inclusion_reason: legal
+    justification: "Licensing of software in lockers and the backend is tracked to avoid IP infringement."
+  - control_id: "A.5.33"
+    applicable: true
+    inclusion_reason: legal
+    justification: "Retention and integrity of contracts, logs and parcel evidence meet legal and evidential needs."
+  - control_id: "A.5.34"
+    applicable: true
+    inclusion_reason: legal
+    justification: "Handling customers' names, addresses and parcel events makes GDPR PII protection mandatory."
+  - control_id: "A.5.35"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Periodic independent audits assure the ISMS works ahead of certification."
+  - control_id: "A.5.36"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Regular checks confirm lockers, cloud and staff follow PaketPort's security rules."
+  - control_id: "A.5.37"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Documented runbooks for locker maintenance and cloud ops ensure secure, repeatable handling."
+  - control_id: "A.6.1"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Technicians reach street lockers and staff handle PII, so lawful screening cuts insider risk."
+  - control_id: "A.6.2"
+    applicable: true
+    inclusion_reason: contractual
+    justification: "Employment contracts state each employee's information security responsibilities."
+  - control_id: "A.6.3"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Staff and field technicians are trained to spot phishing and handle customer data safely."
+  - control_id: "A.6.4"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "A formal disciplinary process addresses security policy breaches consistently and fairly."
+  - control_id: "A.6.5"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Confidentiality and access duties persist when staff leave or change roles."
+  - control_id: "A.6.6"
+    applicable: true
+    inclusion_reason: contractual
+    justification: "NDAs bind employees, technicians and carrier partners handling customer and ops data."
+  - control_id: "A.6.7"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Office and remote staff connect to the cloud backend, so remote-working security is required."
+  - control_id: "A.6.8"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Staff and technicians have an easy channel to report suspected incidents like tampered lockers."
+  - control_id: "A.7.1"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Offices and any hosting space have defined secure perimeters against intrusion."
+  - control_id: "A.7.2"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Entry to PaketPort offices and technical rooms is limited to authorised people."
+  - control_id: "A.7.3"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Offices and equipment rooms are physically secured against unauthorised access."
+  - control_id: "A.7.4"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Street-sited lockers and premises are monitored via CCTV and alarms to detect tampering."
+  - control_id: "A.7.5"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Lockers face weather and vandalism, offices fire and flood, all needing protective measures."
+  - control_id: "A.7.6"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Procedures govern work in server and comms rooms and other sensitive areas."
+  - control_id: "A.7.7"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Staff clear desks and lock screens to protect customer data in shared offices."
+  - control_id: "A.7.8"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Locker hardware and IT equipment are sited to reduce theft, damage and unauthorised access."
+  - control_id: "A.7.9"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Lockers and technicians' devices operate off-premises in public and must be protected."
+  - control_id: "A.7.10"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Storage media in lockers, technician kit and the cloud are managed across their lifecycle."
+  - control_id: "A.7.11"
+    applicable: true
+    inclusion_reason: business
+    justification: "Power and connectivity to lockers and hosting are protected to keep services and logs up."
+  - control_id: "A.7.12"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Power and network cabling for lockers and offices is protected from interception and damage."
+  - control_id: "A.7.13"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Regular maintenance keeps lockers and IT equipment secure and available."
+  - control_id: "A.7.14"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Decommissioned lockers and drives are wiped so residual customer data can't be recovered."
+  - control_id: "A.8.1"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Staff laptops and technicians' mobile devices accessing the backend are hardened and managed."
+  - control_id: "A.8.2"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Admin access to the cloud backend and locker fleet management is restricted and monitored."
+  - control_id: "A.8.3"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Access to applications and personal data is limited by role and need-to-know."
+  - control_id: "A.8.4"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Access to app and locker firmware source code and repositories is restricted and logged."
+  - control_id: "A.8.5"
+    applicable: true
+    inclusion_reason: risk
+    justification: "MFA and strong authentication protect admin, staff and API access to lockers and cloud."
+  - control_id: "A.8.6"
+    applicable: true
+    inclusion_reason: business
+    justification: "Backend and network capacity is planned so parcel routing and lockers stay available at peak."
+  - control_id: "A.8.7"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Endpoints, servers and Linux edge devices are protected against malware."
+  - control_id: "A.8.8"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Vulnerabilities in the Linux lockers, cloud stack and dependencies are tracked and patched."
+  - control_id: "A.8.9"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Secure, consistent baselines are enforced across the Linux locker fleet and cloud services."
+  - control_id: "A.8.10"
+    applicable: true
+    inclusion_reason: legal
+    justification: "Customer PII and parcel data are deleted when no longer needed to meet GDPR minimisation."
+  - control_id: "A.8.11"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "PII is masked in test, support and analytics environments to limit exposure."
+  - control_id: "A.8.12"
+    applicable: true
+    inclusion_reason: risk
+    justification: "DLP controls reduce the risk of customer address and parcel data leaving PaketPort."
+  - control_id: "A.8.13"
+    applicable: true
+    inclusion_reason: business
+    justification: "Backups of the backend and configuration guard against data loss and enable recovery."
+  - control_id: "A.8.14"
+    applicable: true
+    inclusion_reason: business
+    justification: "Redundant backend infrastructure keeps lockers and the app available during failures."
+  - control_id: "A.8.15"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Logs from lockers, cloud and access systems are captured to detect and investigate incidents."
+  - control_id: "A.8.16"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Continuous monitoring of the fleet and backend detects anomalous behaviour and attacks."
+  - control_id: "A.8.17"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Synchronised clocks across lockers and servers make logs correlatable for investigations."
+  - control_id: "A.8.18"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Powerful utility programs on Linux edge devices and servers are restricted and monitored."
+  - control_id: "A.8.19"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Software changes on locker devices and production servers are controlled and approved."
+  - control_id: "A.8.20"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Networks linking lockers, cloud and carriers are secured against unauthorised access."
+  - control_id: "A.8.21"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Security features and SLAs of network services connecting lockers are defined and enforced."
+  - control_id: "A.8.22"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Locker, corporate and cloud management networks are segregated to contain compromise."
+  - control_id: "A.8.23"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Web filtering on managed devices reduces exposure to malicious and phishing sites."
+  - control_id: "A.8.24"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Encryption protects personal data in transit and at rest across lockers, cloud and APIs."
+  - control_id: "A.8.25"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "The customer app and locker firmware are built under a defined secure development lifecycle."
+  - control_id: "A.8.26"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Security requirements are specified for the customer app and carrier-facing APIs."
+  - control_id: "A.8.27"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Systems are designed with defence-in-depth and secure-by-default principles."
+  - control_id: "A.8.28"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Developers follow secure coding standards to cut vulnerabilities in app and firmware."
+  - control_id: "A.8.29"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Security testing including pen tests gates releases of the app and locker firmware."
+  - control_id: "A.8.30"
+    applicable: true
+    inclusion_reason: contractual
+    justification: "Any outsourced development is bound by PaketPort's security and quality requirements."
+  - control_id: "A.8.31"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Dev, test and production for backend and firmware are separated to prevent exposure."
+  - control_id: "A.8.32"
+    applicable: true
+    inclusion_reason: risk
+    justification: "Changes to lockers, backend and networks follow controlled change management."
+  - control_id: "A.8.33"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Test data is chosen and protected so live customer PII is not exposed during testing."
+  - control_id: "A.8.34"
+    applicable: true
+    inclusion_reason: best_practice
+    justification: "Audit and testing on production systems are planned to avoid disrupting lockers and backend."

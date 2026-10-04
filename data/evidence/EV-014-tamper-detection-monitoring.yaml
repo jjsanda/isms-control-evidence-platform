@@ -1,0 +1,18 @@
+# Evidence — tamper-detection monitoring export.
+id: "EV-014"
+title: "Tamper-detection monitoring export"
+type: log_export
+control_refs: ["A.7.4"]
+collected_on: 2026-05-10
+collected_by:
+  name: "Karl Mayer"
+  role: "Facilities & Physical Security Lead"
+  email: "karl.mayer@paketport.example"
+artifact_path: "evidence/artifacts/tamper-monitoring.md"
+valid_from: 2026-05-10
+valid_until: 2026-11-10
+source: "manual"
+audit_status: accepted
+notes: >-
+  Export of tamper-detection events from the locker monitoring pipeline over a recent period,
+  showing enclosure/door sensor alerts and how each was correlated with maintenance and handled.

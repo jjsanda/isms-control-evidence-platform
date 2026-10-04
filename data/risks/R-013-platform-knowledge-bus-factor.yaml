@@ -1,0 +1,35 @@
+# Risk — loss of key Linux-platform knowledge (bus factor); residual risk accepted.
+id: "R-013"
+title: "Loss of key Linux-platform knowledge (bus factor)"
+description: >-
+  Departure or extended unavailability of one or two key Linux-platform engineers would leave
+  PaketPort unable to safely operate or change the locker fleet and backend, concentrating critical
+  knowledge in too few people.
+owner:
+  name: "Dana Weber"
+  role: "Managing Director"
+  email: "dana.weber@paketport.example"
+asset: "Platform engineering capability"
+threat: "Departure or unavailability of key platform personnel"
+vulnerability: "Concentration of critical Linux and platform knowledge in a small number of people"
+inherent_likelihood: 3
+inherent_impact: 3
+treatment: accept
+mitigation: >-
+  Infrastructure and secure baselines maintained as code with documented runbooks (A.8.9), a
+  maintained asset and knowledge inventory (A.5.9), and ongoing cross-training. The residual risk
+  is accepted by management while recruitment adds platform redundancy.
+control_refs: ["A.5.9", "A.8.9"]
+residual_likelihood: 2
+residual_impact: 3
+target_date: 2026-05-30
+review_date: 2027-05-30
+acceptance: accepted
+accepted_by:
+  name: "Dana Weber"
+  role: "Managing Director"
+  email: "dana.weber@paketport.example"
+acceptance_rationale: >-
+  The Managing Director accepts the residual bus-factor risk given infrastructure-as-code,
+  documented runbooks and ongoing cross-training, while recruitment to add platform redundancy
+  continues; the decision is reviewed annually.

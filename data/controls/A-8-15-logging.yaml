@@ -1,0 +1,33 @@
+# Control A.8.15 — Logging.
+id: "A.8.15"
+title: "Logging"
+theme: technological
+category: "Logging and monitoring"
+objective: >-
+  Produce, store, protect and analyse logs that record activities, exceptions, faults and other
+  relevant events.
+owner:
+  name: "Milan Novak"
+  role: "Head of Platform & SRE"
+  email: "milan.novak@paketport.example"
+status: in_progress
+maturity: 2
+applicable: true
+inclusion_reason: risk
+soa_justification: >-
+  Logs from lockers, cloud and access systems must be captured and protected to detect and
+  investigate incidents.
+policy_refs: []
+evidence_refs: ["EV-002"]
+risk_refs: ["R-008"]
+nis2_areas: [incident_handling]
+implementation_notes: >-
+  auditd and journald are configured on edge and backend hosts to a defined ruleset (EV-002), but
+  today many logs remain local and can be lost if a locker is tampered with; the centralised,
+  tamper-evident log store is being built under initiative INIT-001 and action CAPA-002 and the
+  review is overdue. Once complete, logs forward within minutes and are retained for 90 days — a
+  known, tracked gap linked to R-008.
+last_review: 2026-04-15
+next_review: 2026-06-15
+audit_status: draft
+tags: ["logging", "auditd"]

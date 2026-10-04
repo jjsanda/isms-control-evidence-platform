@@ -1,0 +1,9 @@
+username,full_name,role,system,privileged,mfa_enabled,last_login,status
+arossi,Alex Rossi,Information Security Officer,backend,true,true,2026-07-05,active
+mnovak,Milan Novak,Head of Platform,backend,true,true,2026-07-06,active
+sberger,Sara Berger,IT Operations Lead,backend,true,false,2026-07-04,active
+thorak,Tomas Horak,Security Engineer,backend,false,true,2026-07-06,active
+jbauer,Johann Bauer,External Contractor,backend,false,false,2026-06-30,active
+ehuber,Eva Huber,Support Agent,app,false,true,2026-02-15,active
+lwagner,Lukas Wagner,Developer,backend,false,true,2026-07-01,active
+svc-legacy,Legacy Import Service,service account,backend,true,false,2025-01-02,disabled
